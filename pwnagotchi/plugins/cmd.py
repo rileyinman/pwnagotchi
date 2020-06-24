@@ -10,7 +10,7 @@ from pwnagotchi.utils import download_file, unzip, save_config, parse_version, m
 from pwnagotchi.plugins import default_path
 
 
-SAVE_DIR = '/usr/local/share/pwnagotchi/availaible-plugins/'
+SAVE_DIR = '/usr/local/share/pwnagotchi/available-plugins/'
 DEFAULT_INSTALL_PATH = '/usr/local/share/pwnagotchi/installed-plugins/'
 
 
@@ -259,7 +259,7 @@ def _extract_version(filename):
 
 def _get_available():
     """
-    Get all availaible plugins
+    Get all available plugins
     """
     available = dict()
     for filename in glob.glob(os.path.join(SAVE_DIR, "*.py")):
