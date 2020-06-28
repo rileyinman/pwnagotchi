@@ -1,15 +1,11 @@
-import os
 import logging
 import threading
-from itertools import islice
-from time import sleep
-from datetime import datetime,timedelta
-from pwnagotchi import plugins
-from pwnagotchi.utils import StatusFile
+
 from flask import render_template_string
-from flask import jsonify
 from flask import abort
 from flask import Response
+
+from pwnagotchi import plugins
 
 
 TEMPLATE = """
@@ -254,7 +250,7 @@ class Logtail(plugins.Plugin):
         logging.info("[logtail] Plugin loaded.")
 
 
-    def on_webhook(self, path, request):
+    def on_webhook(self, path):
         if not self.ready:
             return "Plugin not ready"
 

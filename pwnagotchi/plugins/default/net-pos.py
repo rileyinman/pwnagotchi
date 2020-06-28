@@ -1,9 +1,11 @@
-import logging
 import json
+import logging
 import os
 import threading
-import requests
 import time
+
+import requests
+
 import pwnagotchi.plugins as plugins
 from pwnagotchi.utils import StatusFile
 
@@ -33,7 +35,7 @@ class NetPos(plugins.Plugin):
             self.API_URL = self.options['api_url']
         self.ready = True
         logging.info("[net-pos] Plugin loaded.")
-        logging.debug(f"[net-pos] Using api_url: {self.API_URL}.");
+        logging.debug(f"[net-pos] Using api_url: {self.API_URL}.")
 
     def _append_saved(self, path):
         to_save = list()
@@ -101,7 +103,7 @@ class NetPos(plugins.Plugin):
                         display.set('status', f"Fetching positions ({idx + 1}/{len(new_np_files)})")
                         display.update(force=True)
 
-    def on_handshake(self, agent, filename, access_point, client_station):
+    def on_handshake(self, agent, filename):
         netpos = self._get_netpos(agent)
         if not netpos['wifiAccessPoints']:
             return

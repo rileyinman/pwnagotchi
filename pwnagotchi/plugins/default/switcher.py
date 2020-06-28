@@ -1,7 +1,8 @@
-import os
-import logging
-from threading import Lock
 from functools import partial
+import logging
+import os
+from threading import Lock
+
 from pwnagotchi import plugins
 from pwnagotchi import reboot
 
@@ -34,7 +35,7 @@ def run_task(name, options):
     with open(script_path, 'wt') as script_file:
         script_file.write('#!/bin/bash\n')
         for cmd in options['commands']:
-            script_file.write('{cmd}\n')
+            script_file.write(f'{cmd}\n')
 
     os.system(f"chmod a+x {script_path}")
 

@@ -36,15 +36,15 @@ class GPS(plugins.Plugin):
         else:
             logging.warning("[gps] No GPS detected.")
 
-    def on_handshake(self, agent, filename, access_point, client_station):
+    def on_handshake(self, agent, filename):
         if self.running:
             info = agent.session()
             self.coordinates = info["gps"]
             gps_filename = filename.replace(".pcap", ".gps.json")
 
             if self.coordinates and all([
-                # avoid 0.000... measurements
-                self.coordinates["Latitude"], self.coordinates["Longitude"]
+                    # avoid 0.000... measurements
+                    self.coordinates["Latitude"], self.coordinates["Longitude"]
             ]):
                 logging.info(f"[gps] Saving GPS to {gps_filename} ({self.coordinates}).")
                 with open(gps_filename, "w+t") as fp:
@@ -76,9 +76,9 @@ class GPS(plugins.Plugin):
             lon_pos = (122, 84)
             alt_pos = (127, 94)
         elif ui.is_waveshare27inch():
-            lat_pos = (6,120)
-            lon_pos = (1,135)
-            alt_pos = (6,150)
+            lat_pos = (6, 120)
+            lon_pos = (1, 135)
+            alt_pos = (6, 150)
         else:
             # guessed values, add tested ones if you can
             lat_pos = (127, 51)
@@ -133,8 +133,8 @@ class GPS(plugins.Plugin):
 
     def on_ui_update(self, ui):
         if self.coordinates and all([
-            # avoid 0.000... measurements
-            self.coordinates["Latitude"], self.coordinates["Longitude"]
+                # avoid 0.000... measurements
+                self.coordinates["Latitude"], self.coordinates["Longitude"]
         ]):
             # last char is sometimes not completely drawn ¯\_(ツ)_/¯
             # using an ending-whitespace as workaround on each line

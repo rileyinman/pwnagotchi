@@ -1,7 +1,7 @@
-from threading import Event
-import _thread
 import logging
 import time
+from threading import Event
+import _thread
 
 import pwnagotchi.plugins as plugins
 
@@ -64,7 +64,7 @@ class Led(plugins.Plugin):
                 else:
                     logging.debug(f"[led] No pattern defined for {self._event_name}.")
             except Exception as e:
-                logging.exception(f"[led] Error while blinking.")
+                logging.exception(f"[led] Error while blinking: {e}")
 
             finally:
                 self._is_busy = False
@@ -74,86 +74,86 @@ class Led(plugins.Plugin):
         self._on_event('updating')
 
     # called when there's one or more unread pwnmail messages
-    def on_unread_inbox(self, num_unread):
+    def on_unread_inbox(self):
         self._on_event('unread_inbox')
 
     # called when there's internet connectivity
-    def on_internet_available(self, agent):
+    def on_internet_available(self):
         self._on_event('internet_available')
 
     # called when everything is ready and the main loop is about to start
-    def on_ready(self, agent):
+    def on_ready(self):
         self._on_event('ready')
 
     # called when the AI finished loading
-    def on_ai_ready(self, agent):
+    def on_ai_ready(self):
         self._on_event('ai_ready')
 
     # called when the AI starts training for a given number of epochs
-    def on_ai_training_start(self, agent, epochs):
+    def on_ai_training_start(self):
         self._on_event('ai_training_start')
 
     # called when the AI got the best reward so far
-    def on_ai_best_reward(self, agent, reward):
+    def on_ai_best_reward(self):
         self._on_event('ai_best_reward')
 
     # called when the AI got the worst reward so far
-    def on_ai_worst_reward(self, agent, reward):
+    def on_ai_worst_reward(self):
         self._on_event('ai_worst_reward')
 
     # called when the status is set to bored
-    def on_bored(self, agent):
+    def on_bored(self):
         self._on_event('bored')
 
     # called when the status is set to sad
-    def on_sad(self, agent):
+    def on_sad(self):
         self._on_event('sad')
 
     # called when the status is set to excited
-    def on_excited(self, agent):
+    def on_excited(self):
         self._on_event('excited')
 
     # called when the status is set to lonely
-    def on_lonely(self, agent):
+    def on_lonely(self):
         self._on_event('lonely')
 
     # called when the agent is rebooting the board
-    def on_rebooting(self, agent):
+    def on_rebooting(self):
         self._on_event('rebooting')
 
     # called when the agent is waiting for t seconds
-    def on_wait(self, agent, t):
+    def on_wait(self):
         self._on_event('wait')
 
     # called when the agent is sleeping for t seconds
-    def on_sleep(self, agent, t):
+    def on_sleep(self):
         self._on_event('sleep')
 
     # called when the agent refreshed its access points list
-    def on_wifi_update(self, agent, access_points):
+    def on_wifi_update(self):
         self._on_event('wifi_update')
 
     # called when the agent is sending an association frame
-    def on_association(self, agent, access_point):
+    def on_association(self):
         self._on_event('association')
 
     # called when the agent is deauthenticating a client station from an AP
-    def on_deauthentication(self, agent, access_point, client_station):
+    def on_deauthentication(self):
         self._on_event('deauthentication')
 
     # called when a new handshake is captured, access_point and client_station are json objects
     # if the agent could match the BSSIDs to the current list, otherwise they are just the strings of the BSSIDs
-    def on_handshake(self, agent, filename, access_point, client_station):
+    def on_handshake(self):
         self._on_event('handshake')
 
     # called when an epoch is over (where an epoch is a single loop of the main algorithm)
-    def on_epoch(self, agent, epoch, epoch_data):
+    def on_epoch(self):
         self._on_event('epoch')
 
     # called when a new peer is detected
-    def on_peer_detected(self, agent, peer):
+    def on_peer_detected(self):
         self._on_event('peer_detected')
 
     # called when a known peer is lost
-    def on_peer_lost(self, agent, peer):
+    def on_peer_lost(self):
         self._on_event('peer_lost')

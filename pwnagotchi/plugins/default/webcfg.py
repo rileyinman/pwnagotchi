@@ -1,11 +1,12 @@
-import logging
 import json
-import toml
+import logging
 import _thread
-from pwnagotchi import restart, plugins
-from pwnagotchi.utils import save_config
+
 from flask import abort
 from flask import render_template_string
+
+from pwnagotchi import restart, plugins
+from pwnagotchi.utils import save_config
 
 INDEX = """
 {% extends "base.html" %}
@@ -499,11 +500,10 @@ class WebConfig(plugins.Plugin):
         if request.method == "GET":
             if path == "/" or not path:
                 return render_template_string(INDEX)
-            elif path == "get-config":
+            if path == "get-config":
                 # send configuration
                 return json.dumps(self.config, default=serializer)
-            else:
-                abort(404)
+            abort(404)
         elif request.method == "POST":
             if path == "save-config":
                 try:

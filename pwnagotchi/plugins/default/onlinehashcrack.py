@@ -1,13 +1,15 @@
-import os
 import csv
-import logging
-import re
-import requests
 from datetime import datetime
+from json.decoder import JSONDecodeError
+import logging
+import os
+import re
 from threading import Lock
+
+import requests
+
 from pwnagotchi.utils import StatusFile, remove_whitelisted
 import pwnagotchi.plugins as plugins
-from json.decoder import JSONDecodeError
 
 
 class OnlineHashCrack(plugins.Plugin):
@@ -79,7 +81,7 @@ class OnlineHashCrack(plugins.Plugin):
             raise os_e
 
 
-    def on_webhook(self, path, request):
+    def on_webhook(self):
         import requests
         from flask import redirect
         s = requests.Session()
@@ -144,7 +146,7 @@ class OnlineHashCrack(plugins.Plugin):
                     with open(cracked_file, 'r') as cracked_list:
                         for row in csv.DictReader(cracked_list):
                             if row['password']:
-                                filename = re.sub(r'[^a-zA-Z0-9]', '', row['ESSID']) + '_' + row['BSSID'].replace(':','')
-                                if os.path.exists( os.path.join(handshake_dir, filename+'.pcap') ):
+                                filename = re.sub(r'[^a-zA-Z0-9]', '', row['ESSID']) + '_' + row['BSSID'].replace(':', '')
+                                if os.path.exists(os.path.join(handshake_dir, filename+'.pcap')):
                                     with open(os.path.join(handshake_dir, filename+'.pcap.cracked'), 'w') as f:
                                         f.write(row['password'])

@@ -17,12 +17,13 @@
 # - Added horizontal and vertical orientation
 #
 ###############################################################
+import logging
+
 from pwnagotchi.ui.components import LabeledValue
 from pwnagotchi.ui.view import BLACK
 import pwnagotchi.ui.fonts as fonts
 import pwnagotchi.plugins as plugins
 import pwnagotchi
-import logging
 
 
 class MemTemp(plugins.Plugin):

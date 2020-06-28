@@ -1,26 +1,26 @@
-import pwnagotchi.plugins as plugins
+from functools import lru_cache
+import json
 import logging
 import os
-import json
 import re
-import datetime
-from flask import Response
-from functools import lru_cache
+import sys
+
 from dateutil.parser import parse
+from flask import Response
 
-'''
-    webgpsmap shows existing position data stored in your /handshakes/ directory
+import pwnagotchi.plugins as plugins
 
-    the plugin does the following:
-        - search for *.pcap files in your /handshakes/ dir
-            - for every found .pcap file it looks for a .geo.json or .gps.json or .paw-gps.json file with
-              latitude+longitude data inside and shows this position on the map
-            - if also an .cracked file with a plaintext password inside exist, it reads the content and shows the
-              position as green instead of red and the password inside the infopox of the position
-    special:
-        you can save the html-map as one file for offline use or host on your own webspace with "/plugins/webgpsmap/offlinemap"
+# webgpsmap shows existing position data stored in your /handshakes/ directory
 
-'''
+# the plugin does the following:
+#     - search for *.pcap files in your /handshakes/ dir
+#         - for every found .pcap file it looks for a .geo.json or .gps.json or .paw-gps.json file with
+#           latitude+longitude data inside and shows this position on the map
+#         - if also an .cracked file with a plaintext password inside exist, it reads the content and shows the
+#           position as green instead of red and the password inside the infopox of the position
+# special:
+#     you can save the html-map as one file for offline use or host on your own webspace with "/plugins/webgpsmap/offlinemap"
+
 
 class Webgpsmap(plugins.Plugin):
     __author__ = 'https://github.com/xenDE and https://github.com/dadav'
@@ -103,7 +103,7 @@ class Webgpsmap(plugins.Plugin):
                         response_status = 200
                         response_mimetype = "application/xhtml+xml"
                         response_header_contenttype = 'text/html'
-                        response_header_contentdisposition = 'attachment; filename=webgpsmap.html';
+                        response_header_contentdisposition = 'attachment; filename=webgpsmap.html'
                     except Exception as error:
                         logging.error(f"[webgpsmap] on_webhook offlinemap: error: {error}")
                         return
@@ -164,9 +164,9 @@ class Webgpsmap(plugins.Plugin):
         all_files = os.listdir(handshake_dir)
         #print(all_files)
         all_pcap_files = [os.path.join(handshake_dir, filename)
-                                for filename in all_files
-                                if filename.endswith('.pcap')
-                                ]
+                          for filename in all_files
+                          if filename.endswith('.pcap')
+                         ]
         all_geo_or_gps_files = []
         for filename_pcap in all_pcap_files:
             filename_base = filename_pcap[:-5]  # remove ".pcap"

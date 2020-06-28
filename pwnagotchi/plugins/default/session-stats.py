@@ -1,12 +1,14 @@
-import os
+from datetime import datetime, timedelta
 import logging
+import os
 import threading
 from time import sleep
-from datetime import datetime,timedelta
-from pwnagotchi import plugins
-from pwnagotchi.utils import StatusFile
+
 from flask import render_template_string
 from flask import jsonify
+
+from pwnagotchi import plugins
+from pwnagotchi.utils import StatusFile
 
 TEMPLATE = """
 {% extends "base.html" %}
@@ -214,7 +216,7 @@ class SessionStats(plugins.Plugin):
         result['values'] = list()
         result['labels'] = subkeys
         for plot_key in subkeys:
-            v = [ [ts,d[plot_key]] for ts, d in data.items()]
+            v = [[ts, d[plot_key]] for ts, d in data.items()]
             result['values'].append(v)
         return result
 
@@ -225,7 +227,7 @@ class SessionStats(plugins.Plugin):
         session_param = request.args.get('session')
 
         if path == "os":
-            extract_keys = ['cpu_load','mem_usage',]
+            extract_keys = ['cpu_load', 'mem_usage']
         elif path == "temp":
             extract_keys = ['temperature']
         elif path == "wifi":

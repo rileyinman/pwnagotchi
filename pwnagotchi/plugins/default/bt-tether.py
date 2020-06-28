@@ -1,8 +1,8 @@
 import logging
 import os
 import subprocess
-import time
 from threading import Lock
+import time
 
 import dbus
 
@@ -17,7 +17,6 @@ class BTError(Exception):
     """
     Custom bluetooth exception
     """
-    pass
 
 
 class BTNap:
@@ -129,7 +128,8 @@ class BTNap:
                 return dbus.Interface(obj, BTNap.IFACE_DEV)
         raise BTError('Bluetooth device not found')
 
-    def power(self, on=True):
+    @staticmethod
+    def power(on=True):
         """
         Set power of devices to on/off
         """
@@ -583,7 +583,7 @@ class BTTether(plugins.Plugin):
     def on_ui_setup(self, ui):
         with ui._lock:
             ui.add_element('bluetooth', LabeledValue(color=BLACK, label='BT', value='-', position=(ui.width() / 2 - 15, 0),
-                           label_font=fonts.Bold, text_font=fonts.Medium))
+                                                     label_font=fonts.Bold, text_font=fonts.Medium))
 
 
     def on_ui_update(self, ui):

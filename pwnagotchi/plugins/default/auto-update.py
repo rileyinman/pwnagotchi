@@ -1,12 +1,13 @@
-import os
-import re
-import logging
-import subprocess
-import requests
-import platform
-import shutil
 import glob
+import logging
+import os
+import platform
+import re
+import shutil
+import subprocess
 from threading import Lock
+
+import requests
 
 import pwnagotchi
 import pwnagotchi.plugins as plugins

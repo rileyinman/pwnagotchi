@@ -1,11 +1,11 @@
 import logging
 import requests
+
 import pwnagotchi.plugins as plugins
 
-'''
-You need an bluetooth connection to your android phone which is running PAW server with the GPS "hack" from Systemik and edited by shaynemk
-GUIDE HERE: https://community.pwnagotchi.ai/t/setting-up-paw-gps-on-android
-'''
+# You need an bluetooth connection to your android phone which is running
+# PAW server with the GPS "hack" from Systemik and edited by shaynemk
+# GUIDE HERE: https://community.pwnagotchi.ai/t/setting-up-paw-gps-on-android
 
 
 class PawGPS(plugins.Plugin):
@@ -25,7 +25,7 @@ class PawGPS(plugins.Plugin):
         logging.info("[paw-gps] Plugin loaded.")
         logging.info(f"[paw-gps] Using IP address {self.ip}.")
 
-    def on_handshake(self, agent, filename, access_point, client_station):
+    def on_handshake(self, filename):
         gps = requests.get('http://' + self.ip + '/gps.xhtml')
         gps_filename = filename.replace('.pcap', '.paw-gps.json')
 

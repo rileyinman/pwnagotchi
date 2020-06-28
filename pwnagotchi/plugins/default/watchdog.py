@@ -1,8 +1,8 @@
-import os
+from io import TextIOWrapper
 import logging
 import re
 import subprocess
-from io import TextIOWrapper
+
 from pwnagotchi import plugins
 
 
@@ -24,8 +24,8 @@ class Watchdog(plugins.Plugin):
 
     def on_epoch(self, agent, epoch, epoch_data):
         # get last 10 lines
-        last_lines = ''.join(list(TextIOWrapper(subprocess.Popen(['journalctl','-n10','-k', '--since', '-5m'],
-                                                stdout=subprocess.PIPE).stdout))[-10:])
+        last_lines = ''.join(list(TextIOWrapper(subprocess.Popen(['journalctl', '-n10', '-k', '--since', '-5m'],
+                                                                 stdout=subprocess.PIPE).stdout))[-10:])
         if len(self.pattern.findall(last_lines)) >= 5:
             display = agent.view()
             display.set('status', 'Blind-Bug detected. Restarting.')
