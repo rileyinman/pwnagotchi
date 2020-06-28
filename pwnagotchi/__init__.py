@@ -20,27 +20,27 @@ def set_name(new_name):
         return
 
     if not re.match(r'^[a-zA-Z0-9\-]{2,25}$', new_name):
-        logging.warning("name '%s' is invalid: min length is 2, max length 25, only a-zA-Z0-9- allowed", new_name)
+        logging.warning(f"name '{new_name}' is invalid: min length is 2, max length 25, only a-zA-Z0-9- allowed")
         return
 
     current = name()
     if new_name != current:
         global _name
 
-        logging.info("setting unit hostname '%s' -> '%s'", current, new_name)
+        logging.info(f"setting unit hostname '{current}' -> '{new_name}'")
         with open('/etc/hostname', 'wt') as fp:
             fp.write(new_name)
 
         with open('/etc/hosts', 'rt') as fp:
             prev = fp.read()
-            logging.debug("old hosts:\n%s\n", prev)
+            logging.debug(f"old hosts:\n{prev}\n")
 
         with open('/etc/hosts', 'wt') as fp:
             patched = prev.replace(current, new_name, -1)
-            logging.debug("new hosts:\n%s\n", patched)
+            logging.debug(f"new hosts:\n{patched}\n")
             fp.write(patched)
 
-        os.system("hostname '%s'" % new_name)
+        os.system(f"hostname '{new_name}'")
         pwnagotchi.reboot()
 
 
@@ -119,13 +119,13 @@ def shutdown():
     from pwnagotchi import fs
     for m in fs.mounts:
         m.sync()
- 
+
     os.system("sync")
     os.system("halt")
 
 
 def restart(mode):
-    logging.warning("restarting in %s mode ...", mode)
+    logging.warning(f"restarting in {mode} mode ...")
 
     if mode == 'AUTO':
         os.system("touch /root/.pwnagotchi-auto")
@@ -139,9 +139,9 @@ def restart(mode):
 def reboot(mode=None):
     if mode is not None:
         mode = mode.upper()
-        logging.warning("rebooting in %s mode ...", mode)
+        logging.warning(f"rebooting in {mode} mode...")
     else:
-        logging.warning("rebooting ...")
+        logging.warning("rebooting...")
 
     from pwnagotchi.ui import view
     if view.ROOT:

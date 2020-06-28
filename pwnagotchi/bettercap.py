@@ -11,9 +11,9 @@ def decode(r, verbose_errors=True):
         return r.json()
     except Exception as e:
         if r.status_code == 200:
-            logging.error("error while decoding json: error='%s' resp='%s'" % (e, r.text))
+            logging.error(f"Error while decoding json: error='{e}' resp='{r.text}'")
         else:
-            err = "error %d: %s" % (r.status_code, r.text.strip())
+            err = f"error {r.status_code}: {r.text.strip()}"
             if verbose_errors:
                 logging.info(err)
             raise Exception(err)
@@ -27,16 +27,16 @@ class Client(object):
         self.port = port
         self.username = username
         self.password = password
-        self.url = "%s://%s:%d/api" % (scheme, hostname, port)
-        self.websocket = "ws://%s:%s@%s:%d/api" % (username, password, hostname, port)
+        self.url = "{scheme}://{hostname}:{port}/api"
+        self.websocket = "ws://{username}:{password}@{hostname}:{port}/api"
         self.auth = HTTPBasicAuth(username, password)
 
     def session(self):
-        r = requests.get("%s/session" % self.url, auth=self.auth)
+        r = requests.get(f"{self.url}/session", auth=self.auth)
         return decode(r)
 
     async def start_websocket(self, consumer):
-        s = "%s/events" % self.websocket
+        s = "{self.websocket}/events"
         while True:
             try:
                 async with websockets.connect(s, ping_interval=60, ping_timeout=90) as ws:
@@ -44,12 +44,12 @@ class Client(object):
                         try:
                             await consumer(msg)
                         except Exception as ex:
-                            logging.debug("Error while parsing event (%s)", ex)
+                            logging.debug(f"Error while parsing event ({ex})")
             except websockets.exceptions.ConnectionClosedError:
                 logging.debug("Lost websocket connection. Reconnecting...")
             except websockets.exceptions.WebSocketException as wex:
-                logging.debug("Websocket exception (%s)", wex)
+                logging.debug(f"Websocket exception ({wex})")
 
     def run(self, command, verbose_errors=True):
-        r = requests.post("%s/session" % self.url, auth=self.auth, json={'cmd': command})
+        r = requests.post(f"{self.url}/session", auth=self.auth, json={'cmd': command})
         return decode(r, verbose_errors=verbose_errors)

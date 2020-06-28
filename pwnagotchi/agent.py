@@ -50,9 +50,9 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
         if not os.path.exists(config['bettercap']['handshakes']):
             os.makedirs(config['bettercap']['handshakes'])
 
-        logging.info("%s@%s (v%s)", pwnagotchi.name(), self.fingerprint(), pwnagotchi.__version__)
+        logging.info(f"{pwnagotchi.name()}@{self.fingerprint()} (v{pwnagotchi.__version__})")
         for _, plugin in plugins.loaded.items():
-            logging.debug("plugin '%s' v%s", plugin.__class__.__name__, plugin.__version__)
+            logging.debug(f"Plugin '{plugin.__class__.__name__}' v{plugin.__version}")
 
     def config(self):
         return self._config
@@ -64,22 +64,22 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
         return self._supported_channels
 
     def setup_events(self):
-        logging.info("connecting to %s ...", self.url)
+        logging.info(f"Connecting to {self.url}...")
 
         for tag in self._config['bettercap']['silence']:
             try:
-                self.run('events.ignore %s' % tag, verbose_errors=False)
+                self.run(f'events.ignore {tag}', verbose_errors=False)
             except Exception:
                 pass
 
     def _reset_wifi_settings(self):
         mon_iface = self._config['main']['iface']
-        self.run('set wifi.interface %s' % mon_iface)
-        self.run('set wifi.ap.ttl %d' % self._config['personality']['ap_ttl'])
-        self.run('set wifi.sta.ttl %d' % self._config['personality']['sta_ttl'])
-        self.run('set wifi.rssi.min %d' % self._config['personality']['min_rssi'])
-        self.run('set wifi.handshakes.file %s' % self._config['bettercap']['handshakes'])
-        self.run('set wifi.handshakes.aggregate false')
+        self.run(f"set wifi.interface {mon_iface}")
+        self.run(f"set wifi.ap.ttl {self._config['personality']['ap_ttl']}")
+        self.run(f"set wifi.sta.ttl {self._config['personality']['sta_ttl']}")
+        self.run(f"set wifi.rssi.min {self._config['personality']['min_rssi']}")
+        self.run(f"set wifi.handshakes.file {self._config['bettercap']['handshakes']}")
+        self.run("set wifi.handshakes.aggregate false")
 
     def start_monitor_mode(self):
         mon_iface = self._config['main']['iface']
@@ -91,30 +91,30 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
             s = self.session()
             for iface in s['interfaces']:
                 if iface['name'] == mon_iface:
-                    logging.info("found monitor interface: %s", iface['name'])
+                    logging.info(f"Found monitor interface: {iface['name']}")
                     has_mon = True
                     break
 
             if has_mon is False:
                 if mon_start_cmd is not None and mon_start_cmd != '':
-                    logging.info("starting monitor interface ...")
+                    logging.info("Starting monitor interface...")
                     self.run('!%s' % mon_start_cmd)
                 else:
-                    logging.info("waiting for monitor interface %s ...", mon_iface)
+                    logging.info(f"Waiting for monitor interface {mon_iface}...")
                     time.sleep(1)
 
-        logging.info("supported channels: %s", self._supported_channels)
-        logging.info("handshakes will be collected inside %s", self._config['bettercap']['handshakes'])
+        logging.info(f"Supported channels: {self._supported_channels}")
+        logging.info(f"Handshakes will be collected inside {self._config['bettercap']['handshakes']}")
 
         self._reset_wifi_settings()
 
         wifi_running = self.is_module_running('wifi')
         if wifi_running and restart:
-            logging.debug("restarting wifi module ...")
+            logging.debug("Restarting wifi module ...")
             self.restart_module('wifi.recon')
             self.run('wifi.clear')
         elif not wifi_running:
-            logging.debug("starting wifi module ...")
+            logging.debug("Starting wifi module ...")
             self.start_module('wifi.recon')
 
         self.start_advertising()
@@ -125,7 +125,7 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
                 _s = self.session()
                 return
             except Exception:
-                logging.info("waiting for bettercap API to be available ...")
+                logging.info("Waiting for bettercap API to be available...")
                 time.sleep(1)
 
     def start(self):
@@ -153,14 +153,14 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
 
         if not channels:
             self._current_channel = 0
-            logging.debug("RECON %ds", recon_time)
+            logging.debug(f"RECON {recon_time}s")
             self.run('wifi.recon.channel clear')
         else:
-            logging.debug("RECON %ds ON CHANNELS %s", recon_time, ','.join(map(str, channels)))
+            logging.debug(f"RECON {recon_time}s ON CHANNELS {','.join(map(str, channels))}")
             try:
-                self.run('wifi.recon.channel %s' % ','.join(map(str, channels)))
+                self.run(f'wifi.recon.channel {",".join(map(str, channels))}')
             except Exception as e:
-                logging.exception("Error while setting wifi.recon.channels (%s)", e)
+                logging.exception(f"Error while setting wifi.recon.channels ({e})")
 
         self.wait_for(recon_time, sleeping=False)
 
@@ -190,7 +190,7 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
                     if self._filter_included(ap):
                         aps.append(ap)
         except Exception as e:
-            logging.exception("Error while getting acces points (%s)", e)
+            logging.exception(f"Error while getting acces points ({e})")
 
         aps.sort(key=lambda ap: ap['channel'])
         return self.set_access_points(aps)
@@ -276,7 +276,7 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
         pwnagotchi.reboot()
 
     def _save_recovery_data(self):
-        logging.warning("writing recovery data to %s ...", RECOVERY_DATA_FILE)
+        logging.warning(f"Writing recovery data to {RECOVERY_DATA_FILE}...")
         with open(RECOVERY_DATA_FILE, 'w') as fp:
             data = {
                 'started_at': self._started_at,
@@ -291,7 +291,7 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
         try:
             with open(RECOVERY_DATA_FILE, 'rt') as fp:
                 data = json.load(fp)
-                logging.info("found recovery data: %s", data)
+                logging.info(f"Found recovery data: {data}")
                 self._started_at = data['started_at']
                 self._epoch.epoch = data['epoch']
                 self._handshakes = data['handshakes']
@@ -299,7 +299,7 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
                 self._last_pwnd = data['last_pwnd']
 
                 if delete:
-                    logging.info("deleting %s", RECOVERY_DATA_FILE)
+                    logging.info(f"Deleting {RECOVERY_DATA_FILE}")
                     os.unlink(RECOVERY_DATA_FILE)
         except:
             if not no_exceptions:
@@ -334,19 +334,14 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
                 s = self.session()
                 ap_and_station = self._find_ap_sta_in(sta_mac, ap_mac, s)
                 if ap_and_station is None:
-                    logging.warning("!!! captured new handshake: %s !!!", key)
+                    logging.warning(f"!!! Captured new handshake: {key} !!!")
                     self._last_pwnd = ap_mac
                     plugins.on('handshake', self, filename, ap_mac, sta_mac)
                 else:
                     (ap, sta) = ap_and_station
-                    self._last_pwnd = ap['hostname'] if ap['hostname'] != '' and ap[
-                        'hostname'] != '<hidden>' else ap_mac
+                    self._last_pwnd = ap['hostname'] if ap['hostname'] != '' and ap['hostname'] != '<hidden>' else ap_mac
                     logging.warning(
-                        "!!! captured new handshake on channel %d, %d dBm: %s (%s) -> %s [%s (%s)] !!!",
-                            ap['channel'],
-                            ap['rssi'],
-                            sta['mac'], sta['vendor'],
-                            ap['hostname'], ap['mac'], ap['vendor'])
+                        f"!!! Captured new handshake on channel {ap['channel']}, {ap['rssi']} dBm: {sta['mac']} ({sta['vendor']}) -> {ap['hostname']} [{ap['mac']} ({ap['vendor']})] !!!")
                     plugins.on('handshake', self, filename, ap, sta)
                 found_handshake = True
             self._update_handshakes(1 if found_handshake else 0)
@@ -356,12 +351,12 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
         self.run('events.clear')
 
         while True:
-            logging.debug("polling events ...")
+            logging.debug("Polling events...")
             try:
                 loop.create_task(self.start_websocket(self._on_event))
                 loop.run_forever()
             except Exception as ex:
-                logging.debug("Error while polling via websocket (%s)", ex)
+                logging.debug(f"Error while polling via websocket ({ex}).")
 
     def start_event_polling(self):
         # start a thread and pass in the mainloop
@@ -402,16 +397,15 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
 
     def associate(self, ap, throttle=0):
         if self.is_stale():
-            logging.debug("recon is stale, skipping assoc(%s)", ap['mac'])
+            logging.debug(f"Recon is stale, skipping assoc({ap['mac']}).")
             return
 
         if self._config['personality']['associate'] and self._should_interact(ap['mac']):
             self._view.on_assoc(ap)
 
             try:
-                logging.info("sending association frame to %s (%s %s) on channel %d [%d clients], %d dBm...",
-                    ap['hostname'], ap['mac'], ap['vendor'], ap['channel'], len(ap['clients']), ap['rssi'])
-                self.run('wifi.assoc %s' % ap['mac'])
+                logging.info(f"Sending association frame to {ap['hostname']} ({ap['mac']} {ap['vendor']}) on channel {ap['channel']} [{len(ap['clients'])} clients], {ap['rssi']} dBm...")
+                self.run(f"wifi.assoc {ap['mac']}")
                 self._epoch.track(assoc=True)
             except Exception as e:
                 self._on_error(ap['mac'], e)
@@ -423,16 +417,15 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
 
     def deauth(self, ap, sta, throttle=0):
         if self.is_stale():
-            logging.debug("recon is stale, skipping deauth(%s)", sta['mac'])
+            logging.debug(f"Recon is stale, skipping deauth({sta['mac']}).")
             return
 
         if self._config['personality']['deauth'] and self._should_interact(sta['mac']):
             self._view.on_deauth(sta)
 
             try:
-                logging.info("deauthing %s (%s) from %s (%s %s) on channel %d, %d dBm ...",
-                    sta['mac'], sta['vendor'], ap['hostname'], ap['mac'], ap['vendor'], ap['channel'], ap['rssi'])
-                self.run('wifi.deauth %s' % sta['mac'])
+                logging.info(f"Deauthing {sta['mac']} ({sta['vendor']}) from {ap['hostname']} ({ap['mac']} {ap['vendor']}) on channel {ap['channel']}, {ap['rssi']} dBm...")
+                self.run(f"wifi.deauth {sta['mac']}")
                 self._epoch.track(deauth=True)
             except Exception as e:
                 self._on_error(sta['mac'], e)
@@ -444,7 +437,7 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
 
     def set_channel(self, channel, verbose=True):
         if self.is_stale():
-            logging.debug("recon is stale, skipping set_channel(%d)", channel)
+            logging.debug(f"Recon is stale, skipping set_channel({channel}).")
             return
 
         # if in the previous loop no client stations has been deauthenticated
@@ -460,19 +453,19 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
         if channel != self._current_channel:
             if self._current_channel != 0 and wait > 0:
                 if verbose:
-                    logging.info("waiting for %ds on channel %d ...", wait, self._current_channel)
+                    logging.info(f"Waiting for {wait}s on channel {self._current_channel}...")
                 else:
-                    logging.debug("waiting for %ds on channel %d ...", wait, self._current_channel)
+                    logging.debug(f"Waiting for {wait}s on channel {self._current_channel}...")
                 self.wait_for(wait)
             if verbose and self._epoch.any_activity:
-                logging.info("CHANNEL %d", channel)
+                logging.info(f"CHANNEL {channel}")
             try:
-                self.run('wifi.recon.channel %d' % channel)
+                self.run(f'wifi.recon.channel {channel}')
                 self._current_channel = channel
                 self._epoch.track(hop=True)
-                self._view.set('channel', '%d' % channel)
+                self._view.set('channel', f'{channel}')
 
                 plugins.on('channel_hop', self, channel)
 
             except Exception as e:
-                logging.error("Error while setting channel (%s)", e)
+                logging.error(f"Error while setting channel ({e})")

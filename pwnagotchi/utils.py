@@ -166,20 +166,20 @@ def load_config(args):
     for boot_conf in ['/boot/config.yml', '/boot/config.toml']:
         if os.path.exists(boot_conf):
             # logging not configured here yet
-            print("installing %s to %s ...", boot_conf, args.user_config)
+            print(f"Installing {boot_conf} to {args.user_config}...")
             # https://stackoverflow.com/questions/42392600/oserror-errno-18-invalid-cross-device-link
             shutil.move(boot_conf, args.user_config)
             break
 
     # check for an entire pwnagotchi folder on /boot/
     if os.path.isdir('/boot/pwnagotchi'):
-        print("installing /boot/pwnagotchi to /etc/pwnagotchi ...")
+        print("Installing /boot/pwnagotchi to /etc/pwnagotchi ...")
         shutil.rmtree('/etc/pwnagotchi', ignore_errors=True)
         shutil.move('/boot/pwnagotchi', '/etc/')
 
     # if not config is found, copy the defaults
     if not os.path.exists(args.config):
-        print("copying %s to %s ..." % (ref_defaults_file, args.config))
+        print(f"Copying {ref_defaults_file} to {args.config}...")
         shutil.copy(ref_defaults_file, args.config)
     else:
         # check if the user messed with the defaults
@@ -191,7 +191,7 @@ def load_config(args):
             defaults_data = fp.read()
 
         if ref_defaults_data != defaults_data:
-            print("!!! file in %s is different than release defaults, overwriting !!!" % args.config)
+            print(f"!!! file in {args.config} is different than release defaults, overwriting !!!")
             shutil.copy(ref_defaults_file, args.config)
 
     # load the defaults
@@ -220,7 +220,7 @@ def load_config(args):
         if user_config:
             config = merge_config(user_config, config)
     except Exception as ex:
-        logging.error("There was an error processing the configuration file:\n%s ",ex)
+        logging.error(f"There was an error processing the configuration file:\n{ex}")
         sys.exit(1)
 
     # dropins
@@ -279,7 +279,7 @@ def load_config(args):
         config['ui']['display']['type'] = 'spotpear24inch'
 
     else:
-        print("unsupported display type %s" % config['ui']['display']['type'])
+        print(f"Unsupported display type {config['ui']['display']['type']}")
         sys.exit(1)
 
     return config
@@ -288,7 +288,7 @@ def load_config(args):
 def secs_to_hhmmss(secs):
     mins, secs = divmod(secs, 60)
     hours, mins = divmod(mins, 60)
-    return '%02d:%02d:%02d' % (hours, mins, secs)
+    return f'{hours:02}:{mins:02}:{secs:02}'
 
 
 def total_unique_handshakes(path):
@@ -298,7 +298,7 @@ def total_unique_handshakes(path):
 
 def iface_channels(ifname):
     channels = []
-    output = subprocess.getoutput("/sbin/iwlist %s freq" % ifname)
+    output = subprocess.getoutput(f"/sbin/iwlist {ifname} freq")
     for line in output.split("\n"):
         line = line.strip()
         if line.startswith("Channel "):

@@ -41,13 +41,13 @@ class Voice:
             '...'])
 
     def on_free_channel(self, channel):
-        return self._('Hey, channel {channel} is free! Your AP will say thanks.').format(channel=channel)
+        return self._(f'Hey, channel {channel} is free! Your AP will say thanks.')
 
     def on_reading_logs(self, lines_so_far=0):
         if lines_so_far == 0:
             return self._('Reading last session logs ...')
         else:
-            return self._('Read {lines_so_far} log lines so far ...').format(lines_so_far=lines_so_far)
+            return self._(f'Read {lines_so_far} log lines so far ...')
 
     def on_bored(self):
         return random.choice([
@@ -85,22 +85,22 @@ class Voice:
     def on_new_peer(self, peer):
         if peer.first_encounter():
             return random.choice([
-                self._('Hello {name}! Nice to meet you.').format(name=peer.name())])
+                self._(f'Hello {peer.name()}! Nice to meet you.')])
         else:
             return random.choice([
-                self._('Yo {name}! Sup?').format(name=peer.name()),
-                self._('Hey {name} how are you doing?').format(name=peer.name()),
-                self._('Unit {name} is nearby!').format(name=peer.name())])
+                self._(f'Yo {peer.name()}! Sup?'),
+                self._(f'Hey {peer.name()} how are you doing?'),
+                self._(f'Unit {peer.name()} is nearby!')])
 
     def on_lost_peer(self, peer):
         return random.choice([
-            self._('Uhm ... goodbye {name}').format(name=peer.name()),
-            self._('{name} is gone ...').format(name=peer.name())])
+            self._(f'Uhm... goodbye {peer.name()}'),
+            self._(f'{peer.name()} is gone...')])
 
     def on_miss(self, who):
         return random.choice([
-            self._('Whoops ... {name} is gone.').format(name=who),
-            self._('{name} missed!').format(name=who),
+            self._(f'Whoops ... {who} is gone.'),
+            self._(f'{who} missed!'),
             self._('Missed!')])
 
     def on_grateful(self):
@@ -116,9 +116,9 @@ class Voice:
 
     def on_napping(self, secs):
         return random.choice([
-            self._('Napping for {secs}s ...').format(secs=secs),
+            self._(f'Napping for {secs}s...'),
             self._('Zzzzz'),
-            self._('ZzzZzzz ({secs}s)').format(secs=secs)])
+            self._(f'ZzzZzzz ({secs}s)')])
 
     def on_shutdown(self):
         return random.choice([
@@ -130,46 +130,46 @@ class Voice:
 
     def on_waiting(self, secs):
         return random.choice([
-            self._('Waiting for {secs}s ...').format(secs=secs),
+            self._(f'Waiting for {secs}s...'),
             '...',
-            self._('Looking around ({secs}s)').format(secs=secs)])
+            self._(f'Looking around ({secs}s)')])
 
     def on_assoc(self, ap):
         ssid, bssid = ap['hostname'], ap['mac']
         what = ssid if ssid != '' and ssid != '<hidden>' else bssid
         return random.choice([
-            self._('Hey {what} let\'s be friends!').format(what=what),
-            self._('Associating to {what}').format(what=what),
-            self._('Yo {what}!').format(what=what)])
+            self._(f'Hey {what} let\'s be friends!'),
+            self._(f'Associating to {what}'),
+            self._(f'Yo {what}!')])
 
     def on_deauth(self, sta):
         return random.choice([
-            self._('Just decided that {mac} needs no WiFi!').format(mac=sta['mac']),
-            self._('Deauthenticating {mac}').format(mac=sta['mac']),
-            self._('Kickbanning {mac}!').format(mac=sta['mac'])])
+            self._(f'Just decided that {sta["mac"]} needs no WiFi!'),
+            self._(f'Deauthenticating {sta["mac"]}'),
+            self._(f'Kickbanning {sta["mac"]}!')])
 
     def on_handshakes(self, new_shakes):
         s = 's' if new_shakes > 1 else ''
-        return self._('Cool, we got {num} new handshake{plural}!').format(num=new_shakes, plural=s)
+        return self._(f'Cool, we got {new_shakes} new handshake{s}!')
 
     def on_unread_messages(self, count, total):
         s = 's' if count > 1 else ''
-        return self._('You have {count} new message{plural}!').format(count=count, plural=s)
+        return self._(f'You have {count} new message{s}!')
 
     def on_rebooting(self):
-        return self._("Oops, something went wrong ... Rebooting ...")
+        return self._("Oops, something went wrong... Rebooting...")
 
     def on_last_session_data(self, last_session):
-        status = self._('Kicked {num} stations\n').format(num=last_session.deauthed)
+        status = self._(f'Kicked {last_session.deauthed} stations\n')
         if last_session.associated > 999:
             status += self._('Made >999 new friends\n')
         else:
-            status += self._('Made {num} new friends\n').format(num=last_session.associated)
-        status += self._('Got {num} handshakes\n').format(num=last_session.handshakes)
+            status += self._(f'Made {last_session.associated} new friends\n')
+        status += self._(f'Got {last_session.handshakes} handshakes\n')
         if last_session.peers == 1:
             status += self._('Met 1 peer')
         elif last_session.peers > 0:
-            status += self._('Met {num} peers').format(num=last_session.peers)
+            status += self._(f'Met {last_session.peers} peers')
         return status
 
     def on_last_session_tweet(self, last_session):

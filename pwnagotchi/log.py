@@ -149,7 +149,7 @@ class LastSession(object):
                         else:
                             cache[pubkey].adv['pwnd_tot'] = pwnd_tot
             except Exception as e:
-                logging.error("error parsing line '%s': %s" % (line, e))
+                logging.error("Error parsing line '{line}': {e}")
 
         if started_at is not None:
             self.duration = stopped_at - started_at
@@ -158,23 +158,23 @@ class LastSession(object):
         else:
             hours = mins = secs = 0
 
-        self.duration = '%02d:%02d:%02d' % (hours, mins, secs)
+        self.duration = f'{hours:02}:{mins:02}:{secs:02}'
         self.duration_human = []
         if hours > 0:
-            self.duration_human.append('%d %s' % (hours, self.voice.hhmmss(hours, 'h')))
+            self.duration_human.append(f"{hours} {self.voice.hhmmss(hours, 'h')}")
         if mins > 0:
-            self.duration_human.append('%d %s' % (mins, self.voice.hhmmss(mins, 'm')))
+            self.duration_human.append(f"{hours} {self.voice.hhmmss(mins, 'm')}")
         if secs > 0:
-            self.duration_human.append('%d %s' % (secs, self.voice.hhmmss(secs, 's')))
+            self.duration_human.append(f"{hours} {self.voice.hhmmss(secs, 's')}")
 
         self.duration_human = ', '.join(self.duration_human)
         self.avg_reward /= (self.epochs if self.epochs else 1)
 
     def parse(self, ui, skip=False):
         if skip:
-            logging.debug("skipping parsing of the last session logs ...")
+            logging.debug("Skipping parsing of the last session logs...")
         else:
-            logging.debug("reading last session logs ...")
+            logging.debug("Reading last session logs...")
 
             ui.on_reading_logs()
 
@@ -205,7 +205,7 @@ class LastSession(object):
             self.last_session_id = hashlib.md5(lines[0].encode()).hexdigest()
             self.last_saved_session_id = self._get_last_saved_session_id()
 
-            logging.debug("parsing last session logs (%d lines) ..." % len(lines))
+            logging.debug(f"Parsing last session logs ({len(lines)} lines)...")
 
             self._parse_stats()
         self.parsed = True
@@ -270,7 +270,7 @@ def log_rotation(filename, cfg):
 def parse_max_size(s):
     parts = re.findall(r'(^\d+)([bBkKmMgG]?)', s)
     if len(parts) != 1 or len(parts[0]) != 2:
-        raise Exception("can't parse %s as a max size" % s)
+        raise Exception(f"can't parse {s} as a max size")
 
     num, unit = parts[0]
     num = int(num)
@@ -289,20 +289,20 @@ def parse_max_size(s):
 def do_rotate(filename, stats, cfg):
     base_path = os.path.dirname(filename)
     name = os.path.splitext(os.path.basename(filename))[0]
-    archive_filename = os.path.join(base_path, "%s.gz" % name)
+    archive_filename = os.path.join(base_path, f"{name}.gz")
     counter = 2
 
     while os.path.exists(archive_filename):
-        archive_filename = os.path.join(base_path, "%s-%d.gz" % (name, counter))
+        archive_filename = os.path.join(base_path, f"{name}-{counter}.gz")
         counter += 1
 
     log_filename = archive_filename.replace('gz', 'log')
 
-    print("%s is %d bytes big, rotating to %s ..." % (filename, stats.st_size, log_filename))
+    print(f"{filename} is {stats.st_size} bytes big, rotating to {log_filename}...")
 
     shutil.move(filename, log_filename)
 
-    print("compressing to %s ..." % archive_filename)
+    print("Compressing to {archive_filename}...")
 
     with open(log_filename, 'rb') as src:
         with gzip.open(archive_filename, 'wb') as dst:

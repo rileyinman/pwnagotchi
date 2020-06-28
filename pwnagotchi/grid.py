@@ -24,7 +24,7 @@ def is_connected():
 
 
 def call(path, obj=None):
-    url = '%s%s' % (API_ADDRESS, path)
+    url = f'{API_ADDRESS}{path}'
     if obj is None:
         r = requests.get(url, headers=None, timeout=(30.0, 60.0))
     elif isinstance(obj, dict):
@@ -33,7 +33,7 @@ def call(path, obj=None):
         r = requests.post(url, headers=None, data=obj, timeout=(30.0, 60.0))
 
     if r.status_code != 200:
-        raise Exception("(status %d) %s" % (r.status_code, r.text))
+        raise Exception(f"(status {r.status_code}) {r.text}")
     return r.json()
 
 
@@ -88,7 +88,7 @@ def update_data(last_session):
         'version': pwnagotchi.__version__
     }
 
-    logging.debug("updating grid data: %s" % data)
+    logging.debug(f"Updating grid data: {data}")
 
     call("/data", data)
 
@@ -101,23 +101,23 @@ def report_ap(essid, bssid):
         })
         return True
     except Exception as e:
-        logging.exception("error while reporting ap %s(%s)" % (essid, bssid))
+        logging.exception(f"Error while reporting ap {essid}({bssid})")
 
     return False
 
 
 def inbox(page=1, with_pager=False):
-    obj = call("/inbox?p=%d" % page)
+    obj = call(f"/inbox?p={page}")
     return obj["messages"] if not with_pager else obj
 
 
 def inbox_message(id):
-    return call("/inbox/%d" % int(id))
+    return call(f"/inbox/{int(id)}")
 
 
 def mark_message(id, mark):
-    return call("/inbox/%d/%s" % (int(id), str(mark)))
+    return call(f"/inbox/{int(id)}/{str(mark)}")
 
 
 def send_message(to, message):
-    return call("/unit/%s/inbox" % to, message.encode('utf-8'))
+    return call(f"/unit/{to}/inbox", message.encode('utf-8'))

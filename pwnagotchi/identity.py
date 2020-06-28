@@ -14,7 +14,7 @@ class KeyPair(object):
         self.path = path
         self.priv_path = os.path.join(path, "id_rsa")
         self.priv_key = None
-        self.pub_path = "%s.pub" % self.priv_path
+        self.pub_path = f"{self.priv_path}.pub"
         self.pub_key = None
         self.fingerprint_path = os.path.join(path, "fingerprint")
         self._view = view
@@ -26,8 +26,8 @@ class KeyPair(object):
             # first time, generate new keys
             if not os.path.exists(self.priv_path) or not os.path.exists(self.pub_path):
                 self._view.on_keys_generation()
-                logging.info("generating %s ..." % self.priv_path)
-                os.system("pwngrid -generate -keys '%s'" % self.path)
+                logging.info(f"Generating {self.priv_path}...")
+                os.system(f"pwngrid -generate -keys '{self.path}'")
 
             # load keys: they might be corrupted if the unit has been turned off during the generation, in this case
             # the exception will remove the files and go back at the beginning of this loop.
@@ -56,7 +56,7 @@ class KeyPair(object):
 
             except Exception as e:
                 # if we're here, loading the keys broke something ...
-                logging.exception("error loading keys, maybe corrupted, deleting and regenerating ...")
+                logging.exception("Error loading keys (maybe corrupted), deleting and regenerating...")
                 try:
                     os.remove(self.priv_path)
                     os.remove(self.pub_path)
