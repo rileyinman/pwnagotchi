@@ -207,7 +207,7 @@ TEMPLATE = """
 
 {% block content %}
     <div class="sticky">
-        <input type="text" id="filter" placeholder="Search for ..." title="Type in a filter">
+        <input type="text" id="filter" placeholder="Search for..." title="Type in a filter">
         <span><input checked type="checkbox" id="autoscroll"></span>
         <span><label for="autoscroll"> Autoscroll to bottom</label><br></span>
     </div>

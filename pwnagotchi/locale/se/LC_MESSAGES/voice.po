@@ -20,8 +20,8 @@ msgstr ""
 msgid "ZzzzZZzzzzZzzz"
 msgstr ""
 
-msgid "Hi, I'm Pwnagotchi! Starting ..."
-msgstr "Hej, jag är Pwnagotchi! Startar ..."
+msgid "Hi, I'm Pwnagotchi! Starting..."
+msgstr "Hej, jag är Pwnagotchi! Startar..."
 
 msgid "New day, new hunt, new pwns!"
 msgstr "Ny dag, ny jakt, nya pwns!"
@@ -39,7 +39,7 @@ msgstr "Det neurala nätverket är klart."
 msgid "Hey, channel {channel} is free! Your AP will say thanks."
 msgstr "Du, kanal {channel} är ledig! Din AP will gilla detta."
 
-msgid "I'm bored ..."
+msgid "I'm bored..."
 msgstr "Jag har det så tråkigt..."
 
 msgid "Let's go for a walk!"
@@ -51,11 +51,11 @@ msgstr "Det här är den bästa dagen i mitt liv!"
 msgid "Shitty day :/"
 msgstr "Idag suger :/"
 
-msgid "I'm extremely bored ..."
-msgstr "Jag är extremt uttråkad ..."
+msgid "I'm extremely bored..."
+msgstr "Jag är extremt uttråkad..."
 
-msgid "I'm very sad ..."
-msgstr "Jag är jätteledsen ..."
+msgid "I'm very sad..."
+msgstr "Jag är jätteledsen..."
 
 msgid "I'm sad"
 msgstr "Jag är ledsen"
@@ -72,8 +72,8 @@ msgstr "Så många nätverk!!!"
 msgid "I'm having so much fun!"
 msgstr "Fan vad skoj jag har!"
 
-msgid "My crime is that of curiosity ..."
-msgstr "Mitt brott är att vara nyfiken ..."
+msgid "My crime is that of curiosity..."
+msgstr "Mitt brott är att vara nyfiken..."
 
 #, python-brace-format
 msgid "Hello {name}! Nice to meet you. {name}"
@@ -84,16 +84,16 @@ msgid "Unit {name} is nearby! {name}"
 msgstr "Enheten {name} är nära! {name}"
 
 #, python-brace-format
-msgid "Uhm ... goodbye {name}"
-msgstr "Uhm ... farväl {name}"
+msgid "Uhm... goodbye {name}"
+msgstr "Uhm... farväl {name}"
 
 #, python-brace-format
-msgid "{name} is gone ..."
-msgstr "{name} är borta ..."
+msgid "{name} is gone..."
+msgstr "{name} är borta..."
 
 #, python-brace-format
-msgid "Whoops ... {name} is gone."
-msgstr "Hoppsan ... {name} är borta."
+msgid "Whoops... {name} is gone."
+msgstr "Hoppsan... {name} är borta."
 
 #, python-brace-format
 msgid "{name} missed!"
@@ -102,18 +102,18 @@ msgstr "{name} missade!"
 msgid "Missed!"
 msgstr "Bom!"
 
-msgid "Nobody wants to play with me ..."
-msgstr "Ingen vill leka med mig ..."
+msgid "Nobody wants to play with me..."
+msgstr "Ingen vill leka med mig..."
 
-msgid "I feel so alone ..."
-msgstr "Jag är så ensam ..."
+msgid "I feel so alone..."
+msgstr "Jag är så ensam..."
 
 msgid "Where's everybody?!"
 msgstr "Var är alla?!"
 
 #, python-brace-format
-msgid "Napping for {secs}s ..."
-msgstr "Sover för {secs}s ..."
+msgid "Napping for {secs}s..."
+msgstr "Sover för {secs}s..."
 
 msgid "Zzzzz"
 msgstr ""
@@ -123,8 +123,8 @@ msgid "ZzzZzzz ({secs}s)"
 msgstr ""
 
 #, python-brace-format
-msgid "Waiting for {secs}s ..."
-msgstr "Väntar {secs}s ..."
+msgid "Waiting for {secs}s..."
+msgstr "Väntar {secs}s..."
 
 #, python-brace-format
 msgid "Looking around ({secs}s)"
@@ -158,8 +158,8 @@ msgstr ""
 msgid "Cool, we got {num} new handshake{plural}!"
 msgstr "Lysande, vi har {num} ny handskakningar{plural}!"
 
-msgid "Oops, something went wrong ... Rebooting ..."
-msgstr "Hoppsan, någpt gick fel ... Startar om ..."
+msgid "Oops, something went wrong... Rebooting..."
+msgstr "Hoppsan, någpt gick fel... Startar om..."
 
 #, python-brace-format
 msgid "Kicked {num} stations\n"

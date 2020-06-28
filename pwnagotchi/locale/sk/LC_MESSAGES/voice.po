@@ -20,8 +20,8 @@ msgstr ""
 msgid "ZzzzZZzzzzZzzz"
 msgstr "ZzzzZZzzzzZzzz"
 
-msgid "Hi, I'm Pwnagotchi! Starting ..."
-msgstr "Ahoj, ja som Pwnagotchi! Začíname ..."
+msgid "Hi, I'm Pwnagotchi! Starting..."
+msgstr "Ahoj, ja som Pwnagotchi! Začíname..."
 
 msgid "New day, new hunt, new pwns!"
 msgstr "Nový deň, nový lov, nové pwns!"
@@ -35,15 +35,15 @@ msgstr "AI pripravené."
 msgid "The neural network is ready."
 msgstr "Neurónová sieť je pripravená."
 
-msgid "Generating keys, do not turn off ..."
-msgstr "Generujú sa kľúče, nevypínaj ..."
+msgid "Generating keys, do not turn off..."
+msgstr "Generujú sa kľúče, nevypínaj..."
 
 #, python-brace-format
 msgid "Hey, channel {channel} is free! Your AP will say thanks."
 msgstr "Hej, kanál {channel} je voľný! Váš AP vám poďakuje."
 
-msgid "I'm bored ..."
-msgstr "Nudím sa ..."
+msgid "I'm bored..."
+msgstr "Nudím sa..."
 
 msgid "Let's go for a walk!"
 msgstr "Poďme na prechádzku!"
@@ -54,11 +54,11 @@ msgstr "Toto je najlepší deň môjho života!"
 msgid "Shitty day :/"
 msgstr "Na hovno deň :/"
 
-msgid "I'm extremely bored ..."
-msgstr "Veľmi sa nudím ..."
+msgid "I'm extremely bored..."
+msgstr "Veľmi sa nudím..."
 
-msgid "I'm very sad ..."
-msgstr "Som veľmi smutný ..."
+msgid "I'm very sad..."
+msgstr "Som veľmi smutný..."
 
 msgid "I'm sad"
 msgstr "Som smutný"
@@ -75,8 +75,8 @@ msgstr "Toľko sietí !!!"
 msgid "I'm having so much fun!"
 msgstr "Zabávam sa!"
 
-msgid "My crime is that of curiosity ..."
-msgstr "Môj zločin je zvedavosť ..."
+msgid "My crime is that of curiosity..."
+msgstr "Môj zločin je zvedavosť..."
 
 #, python-brace-format
 msgid "Hello {name}! Nice to meet you."
@@ -87,16 +87,16 @@ msgid "Unit {name} is nearby!"
 msgstr "Jednotka {name} je blízko!"
 
 #, python-brace-format
-msgid "Uhm ... goodbye {name}"
-msgstr "Uhm ... zbohom {name}"
+msgid "Uhm... goodbye {name}"
+msgstr "Uhm... zbohom {name}"
 
 #, python-brace-format
-msgid "{name} is gone ..."
-msgstr "{name} je preč ..."
+msgid "{name} is gone..."
+msgstr "{name} je preč..."
 
 #, python-brace-format
-msgid "Whoops ... {name} is gone."
-msgstr "Hups ... {name} je preč."
+msgid "Whoops... {name} is gone."
+msgstr "Hups... {name} je preč."
 
 #, python-brace-format
 msgid "{name} missed!"
@@ -111,18 +111,18 @@ msgstr "Dobrí priatelia sú požehnaním!"
 msgid "I love my friends!"
 msgstr "Milujem svojich priateľov!"
 
-msgid "Nobody wants to play with me ..."
-msgstr "Nikto sa so mnou nechce hrať ..."
+msgid "Nobody wants to play with me..."
+msgstr "Nikto sa so mnou nechce hrať..."
 
-msgid "I feel so alone ..."
-msgstr "Cítim sa tak sám ..."
+msgid "I feel so alone..."
+msgstr "Cítim sa tak sám..."
 
 msgid "Where's everybody?!"
 msgstr "Kde sú všetci ?!"
 
 #, python-brace-format
-msgid "Napping for {secs}s ..."
-msgstr "Zdriemnem si na {secs}s ..."
+msgid "Napping for {secs}s..."
+msgstr "Zdriemnem si na {secs}s..."
 
 msgid "Zzzzz"
 msgstr "Zzzzz"
@@ -138,8 +138,8 @@ msgid "Zzz"
 msgstr "Zzz"
 
 #, python-brace-format
-msgid "Waiting for {secs}s ..."
-msgstr "Čaká sa {secs}s ..."
+msgid "Waiting for {secs}s..."
+msgstr "Čaká sa {secs}s..."
 
 #, python-brace-format
 msgid "Looking around ({secs}s)"
@@ -177,8 +177,8 @@ msgstr "Super, máme {num} nový handshake{plural}!"
 msgid "You have {count} new message{plural}!"
 msgstr "Máte {count} novú správu{plural}!"
 
-msgid "Oops, something went wrong ... Rebooting ..."
-msgstr "Ops, niečo sa pokazilo ... Reštartujem sa ..."
+msgid "Oops, something went wrong... Rebooting..."
+msgstr "Ops, niečo sa pokazilo... Reštartujem sa..."
 
 #, python-brace-format
 msgid "Kicked {num} stations\n"

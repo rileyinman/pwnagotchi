@@ -171,7 +171,7 @@ def load_config(args):
 
     # check for an entire pwnagotchi folder on /boot/
     if os.path.isdir('/boot/pwnagotchi'):
-        print("Installing /boot/pwnagotchi to /etc/pwnagotchi ...")
+        print("Installing /boot/pwnagotchi to /etc/pwnagotchi...")
         shutil.rmtree('/etc/pwnagotchi', ignore_errors=True)
         shutil.move('/boot/pwnagotchi', '/etc/')
 

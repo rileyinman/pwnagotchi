@@ -19,8 +19,8 @@ msgstr ""
 msgid "ZzzzZZzzzzZzzz"
 msgstr "ZzzzZZzzzzZzzz"
 
-msgid "Hi, I'm Pwnagotchi! Starting ..."
-msgstr "Hoi, Ik ben Pwnagotchi! Opstarten ..."
+msgid "Hi, I'm Pwnagotchi! Starting..."
+msgstr "Hoi, Ik ben Pwnagotchi! Opstarten..."
 
 msgid "New day, new hunt, new pwns!"
 msgstr "Nieuwe dag, nieuwe jacht, nieuwe pwns!"
@@ -38,8 +38,8 @@ msgstr "Neuronen netwerkis klaar voor gebruik."
 msgid "Hey, channel {channel} is free! Your AP will say thanks."
 msgstr "Hey, kanaal {channel} is vrij! Je AP zal je bedanken."
 
-msgid "I'm bored ..."
-msgstr "Ik verveel me ..."
+msgid "I'm bored..."
+msgstr "Ik verveel me..."
 
 msgid "Let's go for a walk!"
 msgstr "Laten we een rondje lopen!"
@@ -50,11 +50,11 @@ msgstr "Dit is de beste dag van mijn leven!"
 msgid "Shitty day :/"
 msgstr "Ruk dag :/"
 
-msgid "I'm extremely bored ..."
-msgstr "Ik verveel me kapot ..."
+msgid "I'm extremely bored..."
+msgstr "Ik verveel me kapot..."
 
-msgid "I'm very sad ..."
-msgstr "Ik ben ergverdrietig ..."
+msgid "I'm very sad..."
+msgstr "Ik ben ergverdrietig..."
 
 msgid "I'm sad"
 msgstr "Ik ben verdrietig"
@@ -71,8 +71,8 @@ msgstr "Zo veel netwerken!!!"
 msgid "I'm having so much fun!"
 msgstr "Dit is zo leuk!"
 
-msgid "My crime is that of curiosity ..."
-msgstr "Mijn enige misdrijf is mijn nieuwsgierigheid ..."
+msgid "My crime is that of curiosity..."
+msgstr "Mijn enige misdrijf is mijn nieuwsgierigheid..."
 
 #, python-brace-format
 msgid "Hello {name}! Nice to meet you. {name}"
@@ -83,16 +83,16 @@ msgid "Unit {name} is nearby! {name}"
 msgstr "Unit {name} is dichtbij! {name}"
 
 #, python-brace-format
-msgid "Uhm ... goodbye {name}"
-msgstr "Uhm ...tot ziens {name}"
+msgid "Uhm... goodbye {name}"
+msgstr "Uhm...tot ziens {name}"
 
 #, python-brace-format
-msgid "{name} is gone ..."
+msgid "{name} is gone..."
 msgstr "{name} is weg"
 
 #, python-brace-format
-msgid "Whoops ... {name} is gone."
-msgstr "Whoopsie ...{name} is weg"
+msgid "Whoops... {name} is gone."
+msgstr "Whoopsie...{name} is weg"
 
 #, python-brace-format
 msgid "{name} missed!"
@@ -101,18 +101,18 @@ msgstr "{name} gemist!"
 msgid "Missed!"
 msgstr "Gemist!"
 
-msgid "Nobody wants to play with me ..."
-msgstr "Niemand wil metmij spelen ..."
+msgid "Nobody wants to play with me..."
+msgstr "Niemand wil metmij spelen..."
 
-msgid "I feel so alone ..."
-msgstr "Zo alleen ..."
+msgid "I feel so alone..."
+msgstr "Zo alleen..."
 
 msgid "Where's everybody?!"
 msgstr "Waar is iedereen?!"
 
 #, python-brace-format
-msgid "Napping for {secs}s ..."
-msgstr "Dutje doen voor {secs}s ..."
+msgid "Napping for {secs}s..."
+msgstr "Dutje doen voor {secs}s..."
 
 msgid "Zzzzz"
 msgstr "Zzzzz"
@@ -122,8 +122,8 @@ msgid "ZzzZzzz ({secs}s)"
 msgstr ""
 
 #, python-brace-format
-msgid "Waiting for {secs}s ..."
-msgstr "Even {secs}s wachten ..."
+msgid "Waiting for {secs}s..."
+msgstr "Even {secs}s wachten..."
 
 #, python-brace-format
 msgid "Looking around ({secs}s)"
@@ -157,8 +157,8 @@ msgstr "Ik ga {mac} even kicken!"
 msgid "Cool, we got {num} new handshake{plural}!"
 msgstr "Gaaf, we hebben {num} nieuwe handshake{plural}!"
 
-msgid "Oops, something went wrong ... Rebooting ..."
-msgstr "Oops, iets ging fout ...Rebooting ..."
+msgid "Oops, something went wrong... Rebooting..."
+msgstr "Oops, iets ging fout...Rebooting..."
 
 #, python-brace-format
 msgid "Kicked {num} stations\n"

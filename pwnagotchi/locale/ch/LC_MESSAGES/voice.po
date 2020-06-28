@@ -20,7 +20,7 @@ msgstr ""
 msgid "ZzzzZZzzzzZzzz"
 msgstr ""
 
-msgid "Hi, I'm Pwnagotchi! Starting ..."
+msgid "Hi, I'm Pwnagotchi! Starting..."
 msgstr "主人，你好.我是WiFi狩猎兽..."
 
 msgid "New day, new hunt, new pwns!"
@@ -35,14 +35,14 @@ msgstr "人工智能已启动."
 msgid "The neural network is ready."
 msgstr "神经元网络已启动."
 
-msgid "Generating keys, do not turn off ..."
+msgid "Generating keys, do not turn off..."
 msgstr "创建密钥中, 请勿断电..."
 
 #, python-brace-format
 msgid "Hey, channel {channel} is free! Your AP will say thanks."
 msgstr ""
 
-msgid "I'm bored ..."
+msgid "I'm bored..."
 msgstr "我无聊了..."
 
 msgid "Let's go for a walk!"
@@ -54,10 +54,10 @@ msgstr "这是我生命中最美好的一天!"
 msgid "Shitty day :/"
 msgstr "今天不开心 :/"
 
-msgid "I'm extremely bored ..."
-msgstr "主人，找点事做吧 ..."
+msgid "I'm extremely bored..."
+msgstr "主人，找点事做吧..."
 
-msgid "I'm very sad ..."
+msgid "I'm very sad..."
 msgstr "我很伤心..."
 
 msgid "I'm sad"
@@ -75,7 +75,7 @@ msgstr "哇，好多猎物!!!"
 msgid "I'm having so much fun!"
 msgstr "我玩的好开心!"
 
-msgid "My crime is that of curiosity ..."
+msgid "My crime is that of curiosity..."
 msgstr "我最大的缺点就是好奇..."
 
 #, python-brace-format
@@ -87,15 +87,15 @@ msgid "Unit {name} is nearby!"
 msgstr ""
 
 #, python-brace-format
-msgid "Uhm ... goodbye {name}"
-msgstr "额 ... 再见{name}"
+msgid "Uhm... goodbye {name}"
+msgstr "额... 再见{name}"
 
 #, python-brace-format
-msgid "{name} is gone ..."
-msgstr "{name} 它走了 ..."
+msgid "{name} is gone..."
+msgstr "{name} 它走了..."
 
 #, python-brace-format
-msgid "Whoops ... {name} is gone."
+msgid "Whoops... {name} is gone."
 msgstr "哎呀... {name} 离开了."
 
 #, python-brace-format
@@ -111,18 +111,18 @@ msgstr "有个好朋友就是福气"
 msgid "I love my friends!"
 msgstr "我爱我的朋友!"
 
-msgid "Nobody wants to play with me ..."
+msgid "Nobody wants to play with me..."
 msgstr "没有人愿意和我玩耍..."
 
-msgid "I feel so alone ..."
+msgid "I feel so alone..."
 msgstr "我可能是天煞孤星..."
 
 msgid "Where's everybody?!"
 msgstr "朋友们都去哪里了?!"
 
 #, python-brace-format
-msgid "Napping for {secs}s ..."
-msgstr "小憩{secs}s ..."
+msgid "Napping for {secs}s..."
+msgstr "小憩{secs}s..."
 
 msgid "Zzzzz"
 msgstr ""
@@ -138,8 +138,8 @@ msgid "Zzz"
 msgstr ""
 
 #, python-brace-format
-msgid "Waiting for {secs}s ..."
-msgstr "等待{secs}s ..."
+msgid "Waiting for {secs}s..."
+msgstr "等待{secs}s..."
 
 #, python-brace-format
 msgid "Looking around ({secs}s)"
@@ -177,8 +177,8 @@ msgstr "太酷了, 我们抓到了{num}新的猎物{plural}!"
 msgid "You have {count} new message{plural}!"
 msgstr "主人，有{count}新消息{plural}!"
 
-msgid "Oops, something went wrong ... Rebooting ..."
-msgstr "行动,额等等有点小问题... 重启ing ..."
+msgid "Oops, something went wrong... Rebooting..."
+msgstr "行动,额等等有点小问题... 重启ing..."
 
 #, python-brace-format
 msgid "Kicked {num} stations\n"

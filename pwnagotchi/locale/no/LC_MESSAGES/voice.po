@@ -20,8 +20,8 @@ msgstr ""
 msgid "ZzzzZZzzzzZzzz"
 msgstr ""
 
-msgid "Hi, I'm Pwnagotchi! Starting ..."
-msgstr "Hei, jeg er Pwnagotchi! Starter ..."
+msgid "Hi, I'm Pwnagotchi! Starting..."
+msgstr "Hei, jeg er Pwnagotchi! Starter..."
 
 msgid "New day, new hunt, new pwns!"
 msgstr "En ny dag, ny jakt, og nye pwns!"
@@ -35,22 +35,22 @@ msgstr "AI klart."
 msgid "The neural network is ready."
 msgstr "Det nevrale nettverket er klart."
 
-msgid "Generating keys, do not turn off ..."
-msgstr "Generer nøkkler, ikke skru meg av ..."
+msgid "Generating keys, do not turn off..."
+msgstr "Generer nøkkler, ikke skru meg av..."
 
 #, python-brace-format
 msgid "Hey, channel {channel} is free! Your AP will say thanks."
 msgstr "Hei, kanalen {channel} er åpen! AP-en din takker."
 
-msgid "Reading last session logs ..."
-msgstr "Leser forrige sesjonen's logs ..."
+msgid "Reading last session logs..."
+msgstr "Leser forrige sesjonen's logs..."
 
 #, python-brace-format
-msgid "Read {lines_so_far} log lines so far ..."
-msgstr "Har lest {lines_so_far} linjer hittil ..."
+msgid "Read {lines_so_far} log lines so far..."
+msgstr "Har lest {lines_so_far} linjer hittil..."
 
-msgid "I'm bored ..."
-msgstr "Kjeder meg ..."
+msgid "I'm bored..."
+msgstr "Kjeder meg..."
 
 msgid "Let's go for a walk!"
 msgstr "La oss stikke på tur!"
@@ -61,17 +61,17 @@ msgstr "Dette er den beste dagen i mitt liv!"
 msgid "Shitty day :/"
 msgstr "Jævlig dag :/"
 
-msgid "I'm extremely bored ..."
-msgstr "Kjeder livet av meg ..."
+msgid "I'm extremely bored..."
+msgstr "Kjeder livet av meg..."
 
-msgid "I'm very sad ..."
-msgstr "Jeg er veldig trist ..."
+msgid "I'm very sad..."
+msgstr "Jeg er veldig trist..."
 
 msgid "I'm sad"
-msgstr "Jeg er trist ..."
+msgstr "Jeg er trist..."
 
-msgid "Leave me alone ..."
-msgstr "La meg være alene ..."
+msgid "Leave me alone..."
+msgstr "La meg være alene..."
 
 msgid "I'm mad at you!"
 msgstr "Jeg er sint på deg!"
@@ -88,8 +88,8 @@ msgstr "Så mange nettverk!!!"
 msgid "I'm having so much fun!"
 msgstr "Jeg har det så gøy!"
 
-msgid "My crime is that of curiosity ..."
-msgstr "Nysgjerrighet er min eneste forbrytelse ..."
+msgid "My crime is that of curiosity..."
+msgstr "Nysgjerrighet er min eneste forbrytelse..."
 
 #, python-brace-format
 msgid "Hello {name}! Nice to meet you."
@@ -108,16 +108,16 @@ msgid "Unit {name} is nearby!"
 msgstr "{name} er i nærheten!"
 
 #, python-brace-format
-msgid "Uhm ... goodbye {name}"
-msgstr "Uhm ... Ha det {name}"
+msgid "Uhm... goodbye {name}"
+msgstr "Uhm... Ha det {name}"
 
 #, python-brace-format
-msgid "{name} is gone ..."
-msgstr "{name} er borte ..."
+msgid "{name} is gone..."
+msgstr "{name} er borte..."
 
 #, python-brace-format
-msgid "Whoops ... {name} is gone."
-msgstr "Oi da ... {name} forsvant."
+msgid "Whoops... {name} is gone."
+msgstr "Oi da... {name} forsvant."
 
 #, python-brace-format
 msgid "{name} missed!"
@@ -132,18 +132,18 @@ msgstr "Gode venner er livet verdt!"
 msgid "I love my friends!"
 msgstr "Jeg digger vennene mine!"
 
-msgid "Nobody wants to play with me ..."
-msgstr "Ingen vil leke med meg ..."
+msgid "Nobody wants to play with me..."
+msgstr "Ingen vil leke med meg..."
 
-msgid "I feel so alone ..."
-msgstr "Jeg er så ensom ..."
+msgid "I feel so alone..."
+msgstr "Jeg er så ensom..."
 
 msgid "Where's everybody?!"
 msgstr "Hvor er alle sammen?!"
 
 #, python-brace-format
-msgid "Napping for {secs}s ..."
-msgstr "Sover i {secs}s ..."
+msgid "Napping for {secs}s..."
+msgstr "Sover i {secs}s..."
 
 msgid "Zzzzz"
 msgstr ""
@@ -159,8 +159,8 @@ msgid "Zzz"
 msgstr ""
 
 #, python-brace-format
-msgid "Waiting for {secs}s ..."
-msgstr "Venter i {secs}s ..."
+msgid "Waiting for {secs}s..."
+msgstr "Venter i {secs}s..."
 
 #, python-brace-format
 msgid "Looking around ({secs}s)"
@@ -198,8 +198,8 @@ msgstr "Fett, vi fikk {num} nye håndtrykk!"
 msgid "You have {count} new message{plural}!"
 msgstr "Du har {count} melding{plural}!"
 
-msgid "Oops, something went wrong ... Rebooting ..."
-msgstr "Oi, noe gikk helt skakk ... Rebooter ..."
+msgid "Oops, something went wrong... Rebooting..."
+msgstr "Oi, noe gikk helt skakk... Rebooter..."
 
 #, python-brace-format
 msgid "Kicked {num} stations\n"

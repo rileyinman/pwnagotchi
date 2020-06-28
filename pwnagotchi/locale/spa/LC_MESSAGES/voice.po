@@ -20,7 +20,7 @@ msgstr ""
 msgid "ZzzzZZzzzzZzzz"
 msgstr "ZzzzZZzzzzZzzz"
 
-msgid "Hi, I'm Pwnagotchi! Starting ..."
+msgid "Hi, I'm Pwnagotchi! Starting..."
 msgstr "Hola, Soy Pwnagotchi! Iniciando..."
 
 msgid "New day, new hunt, new pwns!"
@@ -35,21 +35,21 @@ msgstr "IA lista"
 msgid "The neural network is ready."
 msgstr "La red neuronal esta lista"
 
-msgid "Generating keys, do not turn off ..."
+msgid "Generating keys, do not turn off..."
 msgstr "Generando llaves, no apagar"
 
 #, python-brace-format
 msgid "Hey, channel {channel} is free! Your AP will say thanks."
 msgstr "Hey, canal {channel} esta libre! Tu AP te lo agredecera"
 
-msgid "Reading last session logs ..."
+msgid "Reading last session logs..."
 msgstr "Leyendo logs de la ultima sesion"
 
 #, python-brace-format
-msgid "Read {lines_so_far} log lines so far ..."
+msgid "Read {lines_so_far} log lines so far..."
 msgstr "He leido {lines_so_far} lineas de los logs hasta ahora "
 
-msgid "I'm bored ..."
+msgid "I'm bored..."
 msgstr "Estoy aburrido"
 
 msgid "Let's go for a walk!"
@@ -61,17 +61,17 @@ msgstr "Este es el mejor dia de mi vida"
 msgid "Shitty day :/"
 msgstr "Dia de mierda :/"
 
-msgid "I'm extremely bored ..."
-msgstr "Estoy extremadamente aburrido ..."
+msgid "I'm extremely bored..."
+msgstr "Estoy extremadamente aburrido..."
 
-msgid "I'm very sad ..."
+msgid "I'm very sad..."
 msgstr "Estoy mut triste"
 
 msgid "I'm sad"
 msgstr "Estoy triste"
 
-msgid "Leave me alone ..."
-msgstr "Dejame solo ..."
+msgid "Leave me alone..."
+msgstr "Dejame solo..."
 
 msgid "I'm mad at you!"
 msgstr "Estoy enojado contigo!"
@@ -88,8 +88,8 @@ msgstr "Tantas redes!!!"
 msgid "I'm having so much fun!"
 msgstr "Me estoy divirtiendo mucho!"
 
-msgid "My crime is that of curiosity ..."
-msgstr "Mi crimen es la curiosidad ..."
+msgid "My crime is that of curiosity..."
+msgstr "Mi crimen es la curiosidad..."
 
 #, python-brace-format
 msgid "Hello {name}! Nice to meet you."
@@ -108,16 +108,16 @@ msgid "Unit {name} is nearby!"
 msgstr "Unit {name} esta cerca!"
 
 #, python-brace-format
-msgid "Uhm ... goodbye {name}"
-msgstr "Uhm ... adios {name}"
+msgid "Uhm... goodbye {name}"
+msgstr "Uhm... adios {name}"
 
 #, python-brace-format
-msgid "{name} is gone ..."
-msgstr "{name} se fue ..."
+msgid "{name} is gone..."
+msgstr "{name} se fue..."
 
 #, python-brace-format
-msgid "Whoops ... {name} is gone."
-msgstr "Whoops ... {name} se fue"
+msgid "Whoops... {name} is gone."
+msgstr "Whoops... {name} se fue"
 
 #, python-brace-format
 msgid "{name} missed!"
@@ -132,18 +132,18 @@ msgstr "Los buenos amigos son una bendicion"
 msgid "I love my friends!"
 msgstr "Amo a mis amigos!"
 
-msgid "Nobody wants to play with me ..."
-msgstr "Nadie quiere jugar conmigo ..."
+msgid "Nobody wants to play with me..."
+msgstr "Nadie quiere jugar conmigo..."
 
-msgid "I feel so alone ..."
-msgstr "Me siento muy solo ..."
+msgid "I feel so alone..."
+msgstr "Me siento muy solo..."
 
 msgid "Where's everybody?!"
 msgstr "Donde estan todos?!"
 
 #, python-brace-format
-msgid "Napping for {secs}s ..."
-msgstr "Tomando una siesta por {secs}s ..."
+msgid "Napping for {secs}s..."
+msgstr "Tomando una siesta por {secs}s..."
 
 msgid "Zzzzz"
 msgstr "Zzzzz"
@@ -159,8 +159,8 @@ msgid "Zzz"
 msgstr "Zzz"
 
 #, python-brace-format
-msgid "Waiting for {secs}s ..."
-msgstr "Esperando por {secs}s ..."
+msgid "Waiting for {secs}s..."
+msgstr "Esperando por {secs}s..."
 
 #, python-brace-format
 msgid "Looking around ({secs}s)"
@@ -198,8 +198,8 @@ msgstr "Bien, obtuvimos {num} nuevos handshake{plural}!"
 msgid "You have {count} new message{plural}!"
 msgstr "Tienes {count} nuevos mensajes{plural}!"
 
-msgid "Oops, something went wrong ... Rebooting ..."
-msgstr "Oops, algo salio mal ... Reiniciando ..."
+msgid "Oops, something went wrong... Rebooting..."
+msgstr "Oops, algo salio mal... Reiniciando..."
 
 #, python-brace-format
 msgid "Kicked {num} stations\n"

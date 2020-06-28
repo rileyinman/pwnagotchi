@@ -110,11 +110,11 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
 
         wifi_running = self.is_module_running('wifi')
         if wifi_running and restart:
-            logging.debug("Restarting wifi module ...")
+            logging.debug("Restarting wifi module...")
             self.restart_module('wifi.recon')
             self.run('wifi.clear')
         elif not wifi_running:
-            logging.debug("Starting wifi module ...")
+            logging.debug("Starting wifi module...")
             self.start_module('wifi.recon')
 
         self.start_advertising()

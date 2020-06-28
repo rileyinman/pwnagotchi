@@ -178,7 +178,7 @@ class Wigle(plugins.Plugin):
                 csv_entries.append(new_entry)
                 no_err_entries.append(gps_file)
             if csv_entries:
-                display.set('status', "Uploading gps-data to wigle.net ...")
+                display.set('status', "Uploading gps-data to wigle.net...")
                 display.update(force=True)
                 try:
                     _send_to_wigle(csv_entries, self.options['api_key'])

@@ -76,7 +76,7 @@ class RaspberryPi:
         logging.debug("spi end")
         self.SPI.close()
 
-        logging.debug("close 5V, Module enters 0 power consumption ...")
+        logging.debug("close 5V, Module enters 0 power consumption...")
         self.GPIO.output(self.RST_PIN, 0)
         self.GPIO.output(self.DC_PIN, 0)
 
@@ -135,7 +135,7 @@ class JetsonNano:
         logging.debug("spi end")
         self.SPI.SYSFS_software_spi_end()
 
-        logging.debug("close 5V, Module enters 0 power consumption ...")
+        logging.debug("close 5V, Module enters 0 power consumption...")
         self.GPIO.output(self.RST_PIN, 0)
         self.GPIO.output(self.DC_PIN, 0)
 

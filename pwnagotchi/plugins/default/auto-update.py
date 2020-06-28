@@ -180,7 +180,7 @@ class AutoUpdate(plugins.Plugin):
             prev_status = display.get('status')
 
             try:
-                display.update(force=True, new_data={'status': 'Checking for updates ...'})
+                display.update(force=True, new_data={'status': 'Checking for updates...'})
 
                 to_install = []
                 to_check = [
@@ -213,7 +213,7 @@ class AutoUpdate(plugins.Plugin):
                 self.status.update()
 
                 if num_installed > 0:
-                    display.update(force=True, new_data={'status': 'Rebooting ...'})
+                    display.update(force=True, new_data={'status': 'Rebooting...'})
                     pwnagotchi.reboot()
 
             except Exception as e:

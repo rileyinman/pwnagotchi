@@ -20,8 +20,8 @@ msgstr ""
 msgid "ZzzzZZzzzzZzzz"
 msgstr "ZzzzZZzzzzZzzz"
 
-msgid "Hi, I'm Pwnagotchi! Starting ..."
-msgstr "Ahoj, já jsem Pwnagotchi! Startuju ..."
+msgid "Hi, I'm Pwnagotchi! Starting..."
+msgstr "Ahoj, já jsem Pwnagotchi! Startuju..."
 
 msgid "New day, new hunt, new pwns!"
 msgstr "Nový den, nový lov, nové úlovky!"
@@ -35,22 +35,22 @@ msgstr "AI připraveno."
 msgid "The neural network is ready."
 msgstr "Neuronová síť je připravena."
 
-msgid "Generating keys, do not turn off ..."
+msgid "Generating keys, do not turn off..."
 msgstr "Generování klíčů, nevypínej mě..."
 
 #, python-brace-format
 msgid "Hey, channel {channel} is free! Your AP will say thanks."
 msgstr "Hej, kanál {channel} je volný! Tvůj AP ti poděkuje."
 
-msgid "Reading last session logs ..."
-msgstr "Čtení posledních zpráv z logu ..."
+msgid "Reading last session logs..."
+msgstr "Čtení posledních zpráv z logu..."
 
 #, python-brace-format
-msgid "Read {lines_so_far} log lines so far ..."
-msgstr "Zatím přečteno {lines_so_far} řádků logu ..."
+msgid "Read {lines_so_far} log lines so far..."
+msgstr "Zatím přečteno {lines_so_far} řádků logu..."
 
-msgid "I'm bored ..."
-msgstr "Nudím se ..."
+msgid "I'm bored..."
+msgstr "Nudím se..."
 
 msgid "Let's go for a walk!"
 msgstr "Pojďme se projít!"
@@ -61,17 +61,17 @@ msgstr "Tohle je nejlepší den mého života!"
 msgid "Shitty day :/"
 msgstr "Na hovno den :/"
 
-msgid "I'm extremely bored ..."
-msgstr "Strašně se nudím ..."
+msgid "I'm extremely bored..."
+msgstr "Strašně se nudím..."
 
-msgid "I'm very sad ..."
-msgstr "Jsem dost smutný ..."
+msgid "I'm very sad..."
+msgstr "Jsem dost smutný..."
 
 msgid "I'm sad"
 msgstr "Jsem smutný"
 
-msgid "Leave me alone ..."
-msgstr "Nech mě být ..."
+msgid "Leave me alone..."
+msgstr "Nech mě být..."
 
 msgid "I'm mad at you!"
 msgstr "Jsem na tebe naštvaný!"
@@ -88,8 +88,8 @@ msgstr "Tolik sítí!!!"
 msgid "I'm having so much fun!"
 msgstr "Tohle je super zábava!"
 
-msgid "My crime is that of curiosity ..."
-msgstr "Jsem kriminálně zvědavý ..."
+msgid "My crime is that of curiosity..."
+msgstr "Jsem kriminálně zvědavý..."
 
 #, python-brace-format
 msgid "Hello {name}! Nice to meet you."
@@ -108,16 +108,16 @@ msgid "Unit {name} is nearby!"
 msgstr "Jednotka {name} je nablízku!"
 
 #, python-brace-format
-msgid "Uhm ... goodbye {name}"
+msgid "Uhm... goodbye {name}"
 msgstr "Uhm... Měj se {name}"
 
 #, python-brace-format
-msgid "{name} is gone ..."
-msgstr "{name} je pryč ..."
+msgid "{name} is gone..."
+msgstr "{name} je pryč..."
 
 #, python-brace-format
-msgid "Whoops ... {name} is gone."
-msgstr "Whoops ... {name} je pryč."
+msgid "Whoops... {name} is gone."
+msgstr "Whoops... {name} je pryč."
 
 #, python-brace-format
 msgid "{name} missed!"
@@ -132,18 +132,18 @@ msgstr "Dobří kamarádi jsou požehnání!"
 msgid "I love my friends!"
 msgstr "Miluju svoje kamarády!"
 
-msgid "Nobody wants to play with me ..."
-msgstr "Nikdo si se mnou nechce hrát ..."
+msgid "Nobody wants to play with me..."
+msgstr "Nikdo si se mnou nechce hrát..."
 
-msgid "I feel so alone ..."
-msgstr "Cítím se tak osamělý ..."
+msgid "I feel so alone..."
+msgstr "Cítím se tak osamělý..."
 
 msgid "Where's everybody?!"
 msgstr "Kde jsou všichni?!"
 
 #, python-brace-format
-msgid "Napping for {secs}s ..."
-msgstr "Spím {secs} sekund ..."
+msgid "Napping for {secs}s..."
+msgstr "Spím {secs} sekund..."
 
 msgid "Zzzzz"
 msgstr "Zzzzz"
@@ -159,8 +159,8 @@ msgid "Zzz"
 msgstr "Zzz"
 
 #, python-brace-format
-msgid "Waiting for {secs}s ..."
-msgstr "Čekání {secs} sekund ..."
+msgid "Waiting for {secs}s..."
+msgstr "Čekání {secs} sekund..."
 
 #, python-brace-format
 msgid "Looking around ({secs}s)"
@@ -198,8 +198,8 @@ msgstr "Super, máme {num} nových handshaků!"
 msgid "You have {count} new message{plural}!"
 msgstr "Máš {count} nových zpráv!"
 
-msgid "Oops, something went wrong ... Rebooting ..."
-msgstr "Ups, něco se pokazilo ... Restartuju ..."
+msgid "Oops, something went wrong... Rebooting..."
+msgstr "Ups, něco se pokazilo... Restartuju..."
 
 #, python-brace-format
 msgid "Kicked {num} stations\n"

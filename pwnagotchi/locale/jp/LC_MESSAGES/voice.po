@@ -19,7 +19,7 @@ msgstr ""
 msgid "ZzzzZZzzzzZzzz"
 msgstr "すやすや〜"
 
-msgid "Hi, I'm Pwnagotchi! Starting ..."
+msgid "Hi, I'm Pwnagotchi! Starting..."
 msgstr "僕、 ポーナゴッチです！"
 
 msgid "New day, new hunt, new pwns!"
@@ -34,21 +34,21 @@ msgstr "AIの準備ができました。"
 msgid "The neural network is ready."
 msgstr "ニューラルネットワークの\n準備ができました。"
 
-msgid "Generating keys, do not turn off ..."
+msgid "Generating keys, do not turn off..."
 msgstr "鍵生成をしてます。\n電源を落とさないでね。"
 
 #, python-brace-format
 msgid "Hey, channel {channel} is free! Your AP will say thanks."
 msgstr "チャンネル\n {channel} \nはfreeだよ。ありがとうね。"
 
-msgid "Reading last session logs ..."
+msgid "Reading last session logs..."
 msgstr "session log を読んでます。"
 
 #, python-brace-format
-msgid "Read {lines_so_far} log lines so far ..."
+msgid "Read {lines_so_far} log lines so far..."
 msgstr "{lines_so_far} 行目長いよぉ。"
 
-msgid "I'm bored ..."
+msgid "I'm bored..."
 msgstr "退屈だぁ。。。"
 
 msgid "Let's go for a walk!"
@@ -60,16 +60,16 @@ msgstr "人生最高の日だよ！"
 msgid "Shitty day :/"
 msgstr "がっかりな日だよ。orz"
 
-msgid "I'm extremely bored ..."
+msgid "I'm extremely bored..."
 msgstr "退屈だね。"
 
-msgid "I'm very sad ..."
+msgid "I'm very sad..."
 msgstr "あ～悲しいよぉ。"
 
 msgid "I'm sad"
 msgstr "悲しいね。"
 
-msgid "Leave me alone ..."
+msgid "Leave me alone..."
 msgstr "ひとりぼっちだよ。"
 
 msgid "I'm mad at you!"
@@ -87,7 +87,7 @@ msgstr "たくさん\nWiFiが飛んでるよ！"
 msgid "I'm having so much fun!"
 msgstr "楽しいよぉ！"
 
-msgid "My crime is that of curiosity ..."
+msgid "My crime is that of curiosity..."
 msgstr "APに興味津々..."
 
 #, python-brace-format
@@ -107,15 +107,15 @@ msgid "Unit {name} is nearby!"
 msgstr "{name} が近くにいるよ。"
 
 #, python-brace-format
-msgid "Uhm ... goodbye {name}"
+msgid "Uhm... goodbye {name}"
 msgstr "じゃあね、さようなら {name}"
 
 #, python-brace-format
-msgid "{name} is gone ..."
+msgid "{name} is gone..."
 msgstr "{name}\nがいなくなったよ。"
 
 #, python-brace-format
-msgid "Whoops ... {name} is gone."
+msgid "Whoops... {name} is gone."
 msgstr "あらら、\n{name}\nがいなくなったね。"
 
 #, python-brace-format
@@ -131,17 +131,17 @@ msgstr "良い仲間にめぐりあえたよ。"
 msgid "I love my friends!"
 msgstr "友達は大好きだよ。"
 
-msgid "Nobody wants to play with me ..."
+msgid "Nobody wants to play with me..."
 msgstr "誰も僕と一緒に\nあそんでくれない。"
 
-msgid "I feel so alone ..."
+msgid "I feel so alone..."
 msgstr "ひとりぼっちだよ。"
 
 msgid "Where's everybody?!"
 msgstr "みんなどこにいるの？！"
 
 #, python-brace-format
-msgid "Napping for {secs}s ..."
+msgid "Napping for {secs}s..."
 msgstr "{secs}秒 寝ます。"
 
 msgid "Zzzzz"
@@ -158,7 +158,7 @@ msgid "Zzz"
 msgstr "ぐぅ～"
 
 #, python-brace-format
-msgid "Waiting for {secs}s ..."
+msgid "Waiting for {secs}s..."
 msgstr "{secs}秒 待ちです。"
 
 #, python-brace-format
@@ -197,7 +197,7 @@ msgstr "おぉ、\n{num}回\nハンドシェイクがあったよ！"
 msgid "You have {count} new message{plural}!"
 msgstr "おぉ、\n{count}個メッセージがあるよ！"
 
-msgid "Ops, something went wrong ... Rebooting ..."
+msgid "Ops, something went wrong... Rebooting..."
 msgstr "何か間違った。\nリブートしている。"
 
 #, python-brace-format

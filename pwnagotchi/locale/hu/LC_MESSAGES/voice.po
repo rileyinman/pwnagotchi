@@ -19,8 +19,8 @@ msgstr ""
 msgid "ZzzzZZzzzzZzzz"
 msgstr "ZzzzZZzzzzZzzz"
 
-msgid "Hi, I'm Pwnagotchi! Starting ..."
-msgstr "Hali, Pwnagotchi vagyok! Indítás ..."
+msgid "Hi, I'm Pwnagotchi! Starting..."
+msgstr "Hali, Pwnagotchi vagyok! Indítás..."
 
 msgid "New day, new hunt, new pwns!"
 msgstr "Új nap, új vadászat, új hálózatok!"
@@ -34,22 +34,22 @@ msgstr "MI kész."
 msgid "The neural network is ready."
 msgstr "A neurális hálózat készen áll."
 
-msgid "Generating keys, do not turn off ..."
-msgstr "Kulcspár generálása, ne kapcsold ki az eszközt ..."
+msgid "Generating keys, do not turn off..."
+msgstr "Kulcspár generálása, ne kapcsold ki az eszközt..."
 
 #, python-brace-format
 msgid "Hey, channel {channel} is free! Your AP will say thanks."
 msgstr "A {channel}. számú csatorna üres! Az AP-d meg fogja köszönni."
 
-msgid "Reading last session logs ..."
+msgid "Reading last session logs..."
 msgstr ""
 
 #, python-brace-format
-msgid "Read {lines_so_far} log lines so far ..."
-msgstr "Az utolsó munkamenet logjainak olvasása ..."
+msgid "Read {lines_so_far} log lines so far..."
+msgstr "Az utolsó munkamenet logjainak olvasása..."
 
-msgid "I'm bored ..."
-msgstr "Unatkozom ..."
+msgid "I'm bored..."
+msgstr "Unatkozom..."
 
 msgid "Let's go for a walk!"
 msgstr "Menjünk sétálni!"
@@ -60,17 +60,17 @@ msgstr "Ez a legjobb nap az életemben!"
 msgid "Shitty day :/"
 msgstr "Szar egy nap :/"
 
-msgid "I'm extremely bored ..."
-msgstr "Nagyon unatkozom ..."
+msgid "I'm extremely bored..."
+msgstr "Nagyon unatkozom..."
 
-msgid "I'm very sad ..."
-msgstr "Nagyon szomorú vagyok ..."
+msgid "I'm very sad..."
+msgstr "Nagyon szomorú vagyok..."
 
 msgid "I'm sad"
 msgstr "Szomorú vagyok"
 
-msgid "Leave me alone ..."
-msgstr "Hagyj békén ..."
+msgid "Leave me alone..."
+msgstr "Hagyj békén..."
 
 msgid "I'm mad at you!"
 msgstr "Mérges vagyok rád!"
@@ -87,8 +87,8 @@ msgstr "Rengeteg hálózat!!!"
 msgid "I'm having so much fun!"
 msgstr "Nagyon jól érzem magam!"
 
-msgid "My crime is that of curiosity ..."
-msgstr "Kíváncsiság a bűnöm ..."
+msgid "My crime is that of curiosity..."
+msgstr "Kíváncsiság a bűnöm..."
 
 #, python-brace-format
 msgid "Hello {name}! Nice to meet you."
@@ -107,16 +107,16 @@ msgid "Unit {name} is nearby!"
 msgstr "A {name} nevű egység a közelben van!"
 
 #, python-brace-format
-msgid "Uhm ... goodbye {name}"
-msgstr "Ömm ... ég veled {name}"
+msgid "Uhm... goodbye {name}"
+msgstr "Ömm... ég veled {name}"
 
 #, python-brace-format
-msgid "{name} is gone ..."
-msgstr "{name} eltűnt ..."
+msgid "{name} is gone..."
+msgstr "{name} eltűnt..."
 
 #, python-brace-format
-msgid "Whoops ... {name} is gone."
-msgstr "Whoops ... {name} eltűnt."
+msgid "Whoops... {name} is gone."
+msgstr "Whoops... {name} eltűnt."
 
 #, python-brace-format
 msgid "{name} missed!"
@@ -131,18 +131,18 @@ msgstr "A jó barátok áldás az életben!"
 msgid "I love my friends!"
 msgstr "Szeretem a barátaimat!"
 
-msgid "Nobody wants to play with me ..."
-msgstr "Senki sem akar játszani velem ..."
+msgid "Nobody wants to play with me..."
+msgstr "Senki sem akar játszani velem..."
 
-msgid "I feel so alone ..."
-msgstr "Egyedül vagyok ..."
+msgid "I feel so alone..."
+msgstr "Egyedül vagyok..."
 
 msgid "Where's everybody?!"
 msgstr "Hol vagytok?!"
 
 #, python-brace-format
-msgid "Napping for {secs}s ..."
-msgstr "{secs} másodpercig szundikálok ..."
+msgid "Napping for {secs}s..."
+msgstr "{secs} másodpercig szundikálok..."
 
 msgid "Zzzzz"
 msgstr "Zzzzz"
@@ -158,8 +158,8 @@ msgid "Zzz"
 msgstr "Zzz"
 
 #, python-brace-format
-msgid "Waiting for {secs}s ..."
-msgstr "Várok {secs} másodpercig ..."
+msgid "Waiting for {secs}s..."
+msgstr "Várok {secs} másodpercig..."
 
 #, python-brace-format
 msgid "Looking around ({secs}s)"
@@ -197,8 +197,8 @@ msgstr "Király, kaptunk {num} új üzenetet!"
 msgid "You have {count} new message{plural}!"
 msgstr "{count} új üzeneted van!"
 
-msgid "Oops, something went wrong ... Rebooting ..."
-msgstr "Ops, valami rosszul sikerült ... Újraindítás ..."
+msgid "Oops, something went wrong... Rebooting..."
+msgstr "Ops, valami rosszul sikerült... Újraindítás..."
 
 #, python-brace-format
 msgid "Kicked {num} stations\n"

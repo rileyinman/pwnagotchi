@@ -111,7 +111,7 @@ class AsyncTrainer(object):
         _thread.start_new_thread(self._ai_worker, ())
 
     def _save_ai(self):
-        logging.info("[ai] saving model to %s ..." % self._nn_path)
+        logging.info("[ai] saving model to %s..." % self._nn_path)
         temp = "%s.tmp" % self._nn_path
         self._model.save(temp)
         os.replace(temp, self._nn_path)
@@ -171,7 +171,7 @@ class AsyncTrainer(object):
                 self._model.env.render()
                 # enter in training mode?
                 if random.random() > self._config['ai']['laziness']:
-                    logging.info("[ai] learning for %d epochs ..." % epochs_per_episode)
+                    logging.info("[ai] learning for %d epochs..." % epochs_per_episode)
                     try:
                         self.set_training(True, epochs_per_episode)
                         self._model.learn(total_timesteps=epochs_per_episode, callback=self.on_ai_training_step)

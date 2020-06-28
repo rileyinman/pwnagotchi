@@ -177,7 +177,7 @@ INDEX = """
 
 {% block content %}
     <div id="divTop">
-        <input type="text" id="searchText" placeholder="Search for options ..." title="Type an option name">
+        <input type="text" id="searchText" placeholder="Search for options..." title="Type an option name">
         <span><select id="selAddType"><option value="text">Text</option><option value="number">Number</option></select></span>
         <span><button id="btnAdd" type="button" onclick="addOption()">+</button></span>
     </div>

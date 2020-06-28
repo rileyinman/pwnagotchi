@@ -21,7 +21,7 @@ msgstr ""
 msgid "ZzzzZZzzzzZzzz"
 msgstr ""
 
-msgid "Hi, I'm Pwnagotchi! Starting ..."
+msgid "Hi, I'm Pwnagotchi! Starting..."
 msgstr "Buna, sunt Pwnagotchi! Pornesc..."
 
 msgid "New day, new hunt, new pwns!"
@@ -36,21 +36,21 @@ msgstr "AI-ul e gata."
 msgid "The neural network is ready."
 msgstr "Rețeaua neuronală este gata."
 
-msgid "Generating keys, do not turn off ..."
+msgid "Generating keys, do not turn off..."
 msgstr "Se generează chei, nu închide..."
 
 #, python-brace-format
 msgid "Hey, channel {channel} is free! Your AP will say thanks."
 msgstr "Hey, canalul {channel} este liber! AP-ul tău îti va mulțumi."
 
-msgid "Reading last session logs ..."
+msgid "Reading last session logs..."
 msgstr "Se citesc log-urile din sesiunea anterioara..."
 
 #, python-brace-format
-msgid "Read {lines_so_far} log lines so far ..."
+msgid "Read {lines_so_far} log lines so far..."
 msgstr "Am citit {lines_so_far} linii din log pana acum..."
 
-msgid "I'm bored ..."
+msgid "I'm bored..."
 msgstr "Sunt plictisit..."
 
 msgid "Let's go for a walk!"
@@ -62,16 +62,16 @@ msgstr "Asta este cea mai buna zi din viața mea!"
 msgid "Shitty day :/"
 msgstr "O zi proasta :/"
 
-msgid "I'm extremely bored ..."
+msgid "I'm extremely bored..."
 msgstr "Sunt extrem de plictisit..."
 
-msgid "I'm very sad ..."
+msgid "I'm very sad..."
 msgstr "Sunt foarte trist..."
 
 msgid "I'm sad"
 msgstr "Sunt trist"
 
-msgid "Leave me alone ..."
+msgid "Leave me alone..."
 msgstr "Lasă-mă in pace..."
 
 msgid "I'm mad at you!"
@@ -89,7 +89,7 @@ msgstr "Atât de multe rețele!"
 msgid "I'm having so much fun!"
 msgstr "Mă distrez așa de mult!"
 
-msgid "My crime is that of curiosity ..."
+msgid "My crime is that of curiosity..."
 msgstr "Crima mea este una de curiozitate..."
 
 #, python-brace-format
@@ -109,15 +109,15 @@ msgid "Unit {name} is nearby!"
 msgstr "Unitatea {name} este aproape!"
 
 #, python-brace-format
-msgid "Uhm ... goodbye {name}"
+msgid "Uhm... goodbye {name}"
 msgstr "Uhm... Pa {name}"
 
 #, python-brace-format
-msgid "{name} is gone ..."
+msgid "{name} is gone..."
 msgstr "{name} a dispărut."
 
 #, python-brace-format
-msgid "Whoops ... {name} is gone."
+msgid "Whoops... {name} is gone."
 msgstr "Oops... {name} a dispărut."
 
 #, python-brace-format
@@ -133,17 +133,17 @@ msgstr "Prietenii buni sunt o binecuvântare!"
 msgid "I love my friends!"
 msgstr "Îmi iubesc prietenii!"
 
-msgid "Nobody wants to play with me ..."
+msgid "Nobody wants to play with me..."
 msgstr "Nimeni nu vrea sa se joace cu mine..."
 
-msgid "I feel so alone ..."
+msgid "I feel so alone..."
 msgstr "Mă simt așa de singuratic..."
 
 msgid "Where's everybody?!"
 msgstr "Unde-i toată lumea?!"
 
 #, python-brace-format
-msgid "Napping for {secs}s ..."
+msgid "Napping for {secs}s..."
 msgstr "Dorm pentru {secs}s..."
 
 msgid "Zzzzz"
@@ -160,7 +160,7 @@ msgid "Zzz"
 msgstr "Zzz"
 
 #, python-brace-format
-msgid "Waiting for {secs}s ..."
+msgid "Waiting for {secs}s..."
 msgstr "Aștept pentru {secs}s..."
 
 #, python-brace-format
@@ -199,7 +199,7 @@ msgstr "Șmecher, avem {num} de handshake-uri noi!"
 msgid "You have {count} new message{plural}!"
 msgstr "Ai {count} mesaj(e) nou/noi!"
 
-msgid "Oops, something went wrong ... Rebooting ..."
+msgid "Oops, something went wrong... Rebooting..."
 msgstr "OOps, ceva s-a întamplat... Îmi dau reboot...+"
 
 #, python-brace-format

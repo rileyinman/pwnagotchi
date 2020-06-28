@@ -22,7 +22,7 @@ class Voice:
 
     def on_starting(self):
         return random.choice([
-            self._('Hi, I\'m Pwnagotchi! Starting ...'),
+            self._('Hi, I\'m Pwnagotchi! Starting...'),
             self._('New day, new hunt, new pwns!'),
             self._('Hack the Planet!')])
 
@@ -33,7 +33,7 @@ class Voice:
 
     def on_keys_generation(self):
         return random.choice([
-            self._('Generating keys, do not turn off ...')])
+            self._('Generating keys, do not turn off...')])
 
     def on_normal(self):
         return random.choice([
@@ -45,12 +45,12 @@ class Voice:
 
     def on_reading_logs(self, lines_so_far=0):
         if lines_so_far == 0:
-            return self._('Reading last session logs ...')
-        return self._(f'Read {lines_so_far} log lines so far ...')
+            return self._('Reading last session logs...')
+        return self._(f'Read {lines_so_far} log lines so far...')
 
     def on_bored(self):
         return random.choice([
-            self._('I\'m bored ...'),
+            self._('I\'m bored...'),
             self._('Let\'s go for a walk!')])
 
     def on_motivated(self, reward):
@@ -61,8 +61,8 @@ class Voice:
 
     def on_sad(self):
         return random.choice([
-            self._('I\'m extremely bored ...'),
-            self._('I\'m very sad ...'),
+            self._('I\'m extremely bored...'),
+            self._('I\'m very sad...'),
             self._('I\'m sad'),
             '...'])
 
@@ -70,7 +70,7 @@ class Voice:
         # passive aggressive or not? :D
         return random.choice([
             '...',
-            self._('Leave me alone ...'),
+            self._('Leave me alone...'),
             self._('I\'m mad at you!')])
 
     def on_excited(self):
@@ -79,7 +79,7 @@ class Voice:
             self._('I pwn therefore I am.'),
             self._('So many networks!!!'),
             self._('I\'m having so much fun!'),
-            self._('My crime is that of curiosity ...')])
+            self._('My crime is that of curiosity...')])
 
     def on_new_peer(self, peer):
         if peer.first_encounter():
@@ -98,7 +98,7 @@ class Voice:
 
     def on_miss(self, who):
         return random.choice([
-            self._(f'Whoops ... {who} is gone.'),
+            self._(f'Whoops... {who} is gone.'),
             self._(f'{who} missed!'),
             self._('Missed!')])
 
@@ -109,8 +109,8 @@ class Voice:
 
     def on_lonely(self):
         return random.choice([
-            self._('Nobody wants to play with me ...'),
-            self._('I feel so alone ...'),
+            self._('Nobody wants to play with me...'),
+            self._('I feel so alone...'),
             self._('Where\'s everybody?!')])
 
     def on_napping(self, secs):

@@ -18,24 +18,24 @@ def set_name(new_name):
         return
 
     if not re.match(r'^[a-zA-Z0-9\-]{2,25}$', new_name):
-        logging.warning(f"name '{new_name}' is invalid: min length is 2, max length 25, only a-zA-Z0-9- allowed")
+        logging.warning(f"Name '{new_name}' is invalid: min length is 2, max length 25, only a-zA-Z0-9- allowed.")
         return
 
     current = name()
     if new_name != current:
         global _name
 
-        logging.info(f"setting unit hostname '{current}' -> '{new_name}'")
+        logging.info(f"Setting unit hostname '{current}' -> '{new_name}'.")
         with open('/etc/hostname', 'wt') as fp:
             fp.write(new_name)
 
         with open('/etc/hosts', 'rt') as fp:
             prev = fp.read()
-            logging.debug(f"old hosts:\n{prev}\n")
+            logging.debug(f"Old hosts:\n{prev}\n")
 
         with open('/etc/hosts', 'wt') as fp:
             patched = prev.replace(current, new_name, -1)
-            logging.debug(f"new hosts:\n{patched}\n")
+            logging.debug(f"New hosts:\n{patched}\n")
             fp.write(patched)
 
         os.system(f"hostname '{new_name}'")
@@ -104,7 +104,7 @@ def temperature(celsius=True):
 
 
 def shutdown():
-    logging.warning("shutting down ...")
+    logging.warning("Shutting down...")
 
     from pwnagotchi.ui import view
     if view.ROOT:
@@ -112,7 +112,7 @@ def shutdown():
         # give it some time to refresh the ui
         time.sleep(10)
 
-    logging.warning("syncing...")
+    logging.warning("Syncing...")
 
     from pwnagotchi import fs
     for m in fs.mounts:
@@ -123,7 +123,7 @@ def shutdown():
 
 
 def restart(mode):
-    logging.warning(f"restarting in {mode} mode ...")
+    logging.warning(f"Restarting in {mode} mode...")
 
     if mode == 'AUTO':
         os.system("touch /root/.pwnagotchi-auto")
@@ -137,9 +137,9 @@ def restart(mode):
 def reboot(mode=None):
     if mode is not None:
         mode = mode.upper()
-        logging.warning(f"rebooting in {mode} mode...")
+        logging.warning(f"Rebooting in {mode} mode...")
     else:
-        logging.warning("rebooting...")
+        logging.warning("Rebooting...")
 
     from pwnagotchi.ui import view
     if view.ROOT:
@@ -152,7 +152,7 @@ def reboot(mode=None):
     elif mode == 'MANU':
         os.system("touch /root/.pwnagotchi-manual")
 
-    logging.warning("syncing...")
+    logging.warning("Syncing...")
 
     from pwnagotchi import fs
     for m in fs.mounts:

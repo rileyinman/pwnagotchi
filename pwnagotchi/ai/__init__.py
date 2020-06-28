@@ -15,7 +15,7 @@ def load(config, agent, epoch, from_disk=True):
     try:
         begin = time.time()
 
-        logging.info("[ai] bootstrapping dependencies ...")
+        logging.info("[ai] bootstrapping dependencies...")
 
         start = time.time()
         from stable_baselines import A2C
@@ -36,14 +36,14 @@ def load(config, agent, epoch, from_disk=True):
         env = wrappers.Environment(agent, epoch)
         env = DummyVecEnv([lambda: env])
 
-        logging.info("[ai] creating model ...")
+        logging.info("[ai] creating model...")
 
         start = time.time()
         a2c = A2C(MlpLstmPolicy, env, **config['params'])
         logging.debug("[ai] A2C created in %.2fs" % (time.time() - start))
 
         if from_disk and os.path.exists(config['path']):
-            logging.info("[ai] loading %s ..." % config['path'])
+            logging.info("[ai] loading %s..." % config['path'])
             start = time.time()
             a2c.load(config['path'], env)
             logging.debug("[ai] A2C loaded in %.2fs" % (time.time() - start))

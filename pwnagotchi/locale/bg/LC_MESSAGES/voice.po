@@ -20,8 +20,8 @@ msgstr ""
 msgid "ZzzzZZzzzzZzzz"
 msgstr ""
 
-msgid "Hi, I'm Pwnagotchi! Starting ..."
-msgstr "Здравей, аз съм Pwnagotchi! Стартиране ..."
+msgid "Hi, I'm Pwnagotchi! Starting..."
+msgstr "Здравей, аз съм Pwnagotchi! Стартиране..."
 
 msgid "New day, new hunt, new pwns!"
 msgstr "Нов ден, нов лов, нови pwns!"
@@ -35,15 +35,15 @@ msgstr "AI готов."
 msgid "The neural network is ready."
 msgstr "Невронната мрежа е готова."
 
-msgid "Generating keys, do not turn off ..."
-msgstr "Генериране на ключове, не изключвай ..."
+msgid "Generating keys, do not turn off..."
+msgstr "Генериране на ключове, не изключвай..."
 
 #, python-brace-format
 msgid "Hey, channel {channel} is free! Your AP will say thanks."
 msgstr "Здравей, канал {channel} е свободен! твоя AP ще каже благодаря."
 
-msgid "I'm bored ..."
-msgstr "Скучно ми е ..."
+msgid "I'm bored..."
+msgstr "Скучно ми е..."
 
 msgid "Let's go for a walk!"
 msgstr "Хайда да се поразходим!"
@@ -54,11 +54,11 @@ msgstr "Това е най-добрият ден в живота ми!"
 msgid "Shitty day :/"
 msgstr "Тъп ден :/"
 
-msgid "I'm extremely bored ..."
-msgstr "Супер много ми е скучно ..."
+msgid "I'm extremely bored..."
+msgstr "Супер много ми е скучно..."
 
-msgid "I'm very sad ..."
-msgstr "Много съм тъжен ..."
+msgid "I'm very sad..."
+msgstr "Много съм тъжен..."
 
 msgid "I'm sad"
 msgstr "Тъжен съм"
@@ -75,8 +75,8 @@ msgstr "Толкова много мрежи!!!"
 msgid "I'm having so much fun!"
 msgstr "Толкова много се забавлявам!"
 
-msgid "My crime is that of curiosity ..."
-msgstr "Моето престъпление е това че съм любопитен ..."
+msgid "My crime is that of curiosity..."
+msgstr "Моето престъпление е това че съм любопитен..."
 
 #, python-brace-format
 msgid "Hello {name}! Nice to meet you."
@@ -87,16 +87,16 @@ msgid "Unit {name} is nearby!"
 msgstr "Устройство {name} е наблизо!"
 
 #, python-brace-format
-msgid "Uhm ... goodbye {name}"
-msgstr "Ами ... довиждане {name}"
+msgid "Uhm... goodbye {name}"
+msgstr "Ами... довиждане {name}"
 
 #, python-brace-format
-msgid "{name} is gone ..."
-msgstr "{name} изчезна ..."
+msgid "{name} is gone..."
+msgstr "{name} изчезна..."
 
 #, python-brace-format
-msgid "Whoops ... {name} is gone."
-msgstr "Упс ... {name} изчезна."
+msgid "Whoops... {name} is gone."
+msgstr "Упс... {name} изчезна."
 
 #, python-brace-format
 msgid "{name} missed!"
@@ -111,18 +111,18 @@ msgstr "Добрите приятели са благословия!"
 msgid "I love my friends!"
 msgstr "Обичам приятелите си!"
 
-msgid "Nobody wants to play with me ..."
-msgstr "Никой не иска да си играе с мен ..."
+msgid "Nobody wants to play with me..."
+msgstr "Никой не иска да си играе с мен..."
 
-msgid "I feel so alone ..."
-msgstr "Чувствам се толкова самотен ..."
+msgid "I feel so alone..."
+msgstr "Чувствам се толкова самотен..."
 
 msgid "Where's everybody?!"
 msgstr "Къде са всички?!"
 
 #, python-brace-format
-msgid "Napping for {secs}s ..."
-msgstr "Заспивам за {secs} секунди ..."
+msgid "Napping for {secs}s..."
+msgstr "Заспивам за {secs} секунди..."
 
 msgid "Zzzzz"
 msgstr "Zzzzz"
@@ -138,8 +138,8 @@ msgid "Zzz"
 msgstr "Zzz"
 
 #, python-brace-format
-msgid "Waiting for {secs}s ..."
-msgstr "Чакам {secs} секунди ..."
+msgid "Waiting for {secs}s..."
+msgstr "Чакам {secs} секунди..."
 
 #, python-brace-format
 msgid "Looking around ({secs}s)"
@@ -177,8 +177,8 @@ msgstr "Супер, имаме {num} нови handshake{plural}!"
 msgid "You have {count} new message{plural}!"
 msgstr "Имате {count} нови съобщения!"
 
-msgid "Oops, something went wrong ... Rebooting ..."
-msgstr "Упс, нещо се обърка ... Рестартиране ..."
+msgid "Oops, something went wrong... Rebooting..."
+msgstr "Упс, нещо се обърка... Рестартиране..."
 
 #, python-brace-format
 msgid "Kicked {num} stations\n"

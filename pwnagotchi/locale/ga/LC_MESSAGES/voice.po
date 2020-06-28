@@ -20,8 +20,8 @@ msgstr ""
 msgid "ZzzzZZzzzzZzzz"
 msgstr ""
 
-msgid "Hi, I'm Pwnagotchi! Starting ..."
-msgstr "Dia Duit, Pwnagotchi is ainm dom! Ag tosú ..."
+msgid "Hi, I'm Pwnagotchi! Starting..."
+msgstr "Dia Duit, Pwnagotchi is ainm dom! Ag tosú..."
 
 msgid "New day, new hunt, new pwns!"
 msgstr "Lá nua, seilg nua, pwns nua!"
@@ -39,8 +39,8 @@ msgstr "Tá an líonra néarach réidh."
 msgid "Hey, channel {channel} is free! Your AP will say thanks."
 msgstr "Hé, tá cainéal {channel} ar fail! Déarfaidh do PR go raibh maith agat."
 
-msgid "I'm bored ..."
-msgstr "Tá leadrán orm ..."
+msgid "I'm bored..."
+msgstr "Tá leadrán orm..."
 
 msgid "Let's go for a walk!"
 msgstr "Siúil liom, le do thoil!"
@@ -51,11 +51,11 @@ msgstr "Tá sé an lá is fearr i mo shaol!"
 msgid "Shitty day :/"
 msgstr "Tá lá damanta agam :/"
 
-msgid "I'm extremely bored ..."
-msgstr "Tá mé ag dul as mo mheabhair le leadrán ..."
+msgid "I'm extremely bored..."
+msgstr "Tá mé ag dul as mo mheabhair le leadrán..."
 
-msgid "I'm very sad ..."
-msgstr "Ta brón an domhain orm ..."
+msgid "I'm very sad..."
+msgstr "Ta brón an domhain orm..."
 
 msgid "I'm sad"
 msgstr "Tá brón orm"
@@ -72,8 +72,8 @@ msgstr "Gréasáin - Tá an iliomad acu ann!!!"
 msgid "I'm having so much fun!"
 msgstr "Tá craic iontach agam!"
 
-msgid "My crime is that of curiosity ..."
-msgstr "Ní haon pheaca é bheith fiosrach ..."
+msgid "My crime is that of curiosity..."
+msgstr "Ní haon pheaca é bheith fiosrach..."
 
 #, python-brace-format
 msgid "Hello {name}! Nice to meet you. {name}"
@@ -84,15 +84,15 @@ msgid "Unit {name} is nearby! {name}"
 msgstr "Aonad {name} in aice láimhe! {name}"
 
 #, python-brace-format
-msgid "Uhm ... goodbye {name}"
+msgid "Uhm... goodbye {name}"
 msgstr "Uhm... slán leat {name}"
 
 #, python-brace-format
-msgid "{name} is gone ..."
-msgstr "Tá {name} imithe ..."
+msgid "{name} is gone..."
+msgstr "Tá {name} imithe..."
 
 #, python-brace-format
-msgid "Whoops ... {name} is gone."
+msgid "Whoops... {name} is gone."
 msgstr "Hoips … Tá {name} imithe."
 
 #, python-brace-format
@@ -102,18 +102,18 @@ msgstr "Chaill mé ar {name}!"
 msgid "Missed!"
 msgstr "Chaill mé é sin !"
 
-msgid "Nobody wants to play with me ..."
-msgstr "Níl aon duine ag iarraidh imirt liom ..."
+msgid "Nobody wants to play with me..."
+msgstr "Níl aon duine ag iarraidh imirt liom..."
 
-msgid "I feel so alone ..."
-msgstr "Tá uaigneas an domhain orm ..."
+msgid "I feel so alone..."
+msgstr "Tá uaigneas an domhain orm..."
 
 msgid "Where's everybody?!"
 msgstr "Cá bhfuil gach duine?!"
 
 #, python-brace-format
-msgid "Napping for {secs}s ..."
-msgstr "Néal a chodladh ar {secs}s ..."
+msgid "Napping for {secs}s..."
+msgstr "Néal a chodladh ar {secs}s..."
 
 msgid "Zzzzz"
 msgstr ""
@@ -129,8 +129,8 @@ msgid "Zzz"
 msgstr ""
 
 #, python-brace-format
-msgid "Waiting for {secs}s ..."
-msgstr "Fan ar {secs}s ..."
+msgid "Waiting for {secs}s..."
+msgstr "Fan ar {secs}s..."
 
 #, python-brace-format
 msgid "Looking around ({secs}s)"
@@ -164,7 +164,7 @@ msgstr "Chiceáil mé agus cosc mé ar {mac}!"
 msgid "Cool, we got {num} new handshake{plural}!"
 msgstr "Go hiontach, fuaireamar {num} handshake{plural}!"
 
-msgid "Oops, something went wrong ... Rebooting ..."
+msgid "Oops, something went wrong... Rebooting..."
 msgstr "Hoips...Tháinig ainghléas éigin..."
 
 #, python-brace-format

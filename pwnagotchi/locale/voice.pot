@@ -20,7 +20,7 @@ msgstr ""
 msgid "ZzzzZZzzzzZzzz"
 msgstr ""
 
-msgid "Hi, I'm Pwnagotchi! Starting ..."
+msgid "Hi, I'm Pwnagotchi! Starting..."
 msgstr ""
 
 msgid "New day, new hunt, new pwns!"
@@ -35,21 +35,21 @@ msgstr ""
 msgid "The neural network is ready."
 msgstr ""
 
-msgid "Generating keys, do not turn off ..."
+msgid "Generating keys, do not turn off..."
 msgstr ""
 
 #, python-brace-format
 msgid "Hey, channel {channel} is free! Your AP will say thanks."
 msgstr ""
 
-msgid "Reading last session logs ..."
+msgid "Reading last session logs..."
 msgstr ""
 
 #, python-brace-format
-msgid "Read {lines_so_far} log lines so far ..."
+msgid "Read {lines_so_far} log lines so far..."
 msgstr ""
 
-msgid "I'm bored ..."
+msgid "I'm bored..."
 msgstr ""
 
 msgid "Let's go for a walk!"
@@ -61,16 +61,16 @@ msgstr ""
 msgid "Shitty day :/"
 msgstr ""
 
-msgid "I'm extremely bored ..."
+msgid "I'm extremely bored..."
 msgstr ""
 
-msgid "I'm very sad ..."
+msgid "I'm very sad..."
 msgstr ""
 
 msgid "I'm sad"
 msgstr ""
 
-msgid "Leave me alone ..."
+msgid "Leave me alone..."
 msgstr ""
 
 msgid "I'm mad at you!"
@@ -88,7 +88,7 @@ msgstr ""
 msgid "I'm having so much fun!"
 msgstr ""
 
-msgid "My crime is that of curiosity ..."
+msgid "My crime is that of curiosity..."
 msgstr ""
 
 #, python-brace-format
@@ -108,15 +108,15 @@ msgid "Unit {name} is nearby!"
 msgstr ""
 
 #, python-brace-format
-msgid "Uhm ... goodbye {name}"
+msgid "Uhm... goodbye {name}"
 msgstr ""
 
 #, python-brace-format
-msgid "{name} is gone ..."
+msgid "{name} is gone..."
 msgstr ""
 
 #, python-brace-format
-msgid "Whoops ... {name} is gone."
+msgid "Whoops... {name} is gone."
 msgstr ""
 
 #, python-brace-format
@@ -132,17 +132,17 @@ msgstr ""
 msgid "I love my friends!"
 msgstr ""
 
-msgid "Nobody wants to play with me ..."
+msgid "Nobody wants to play with me..."
 msgstr ""
 
-msgid "I feel so alone ..."
+msgid "I feel so alone..."
 msgstr ""
 
 msgid "Where's everybody?!"
 msgstr ""
 
 #, python-brace-format
-msgid "Napping for {secs}s ..."
+msgid "Napping for {secs}s..."
 msgstr ""
 
 msgid "Zzzzz"
@@ -159,7 +159,7 @@ msgid "Zzz"
 msgstr ""
 
 #, python-brace-format
-msgid "Waiting for {secs}s ..."
+msgid "Waiting for {secs}s..."
 msgstr ""
 
 #, python-brace-format
@@ -198,7 +198,7 @@ msgstr ""
 msgid "You have {count} new message{plural}!"
 msgstr ""
 
-msgid "Oops, something went wrong ... Rebooting ..."
+msgid "Oops, something went wrong... Rebooting..."
 msgstr ""
 
 #, python-brace-format

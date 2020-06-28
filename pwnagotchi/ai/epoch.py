@@ -44,7 +44,7 @@ class Epoch(object):
         # number of peers seen during this epoch
         self.num_peers = 0
         # cumulative bond factor
-        self.tot_bond_factor = 0.0  # cum_bond_factor sounded really bad ...
+        self.tot_bond_factor = 0.0  # cum_bond_factor sounded really bad...
         # average bond factor
         self.avg_bond_factor = 0.0
         # any activity at all during this epoch?
@@ -142,7 +142,7 @@ class Epoch(object):
         if hop:
             self.num_hops += inc
             # these two are used in order to determine the sleep time in seconds
-            # before switching to a new channel ... if nothing happened so far
+            # before switching to a new channel... if nothing happened so far
             # during this epoch on the current channel, we will sleep less
             self.did_deauth = False
             self.did_associate = False

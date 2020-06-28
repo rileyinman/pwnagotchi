@@ -138,6 +138,6 @@ class Automata(object):
         plugins.on('epoch', self, self._epoch.epoch - 1, self._epoch.data())
 
         if self._epoch.blind_for >= self._config['main']['mon_max_blind_epochs']:
-            logging.critical(f"{self._epoch.blind_for} epochs without visible access points -> rebooting ...")
+            logging.critical(f"{self._epoch.blind_for} epochs without visible access points -> rebooting...")
             self._reboot()
             self._epoch.blind_for = 0

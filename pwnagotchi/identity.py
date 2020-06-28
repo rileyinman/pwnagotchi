@@ -56,7 +56,7 @@ class KeyPair(object):
                 return
 
             except Exception as e:
-                # if we're here, loading the keys broke something ...
+                # if we're here, loading the keys broke something...
                 logging.exception("Error loading keys (maybe corrupted), deleting and regenerating...")
                 try:
                     os.remove(self.priv_path)

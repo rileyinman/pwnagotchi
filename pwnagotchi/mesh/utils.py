@@ -72,7 +72,7 @@ class AsyncAdvertiser(object):
         time.sleep(20)
         while True:
             try:
-                logging.debug("polling pwngrid-peer for peers ...")
+                logging.debug("polling pwngrid-peer for peers...")
 
                 grid_peers = grid.peers()
                 new_peers = {}

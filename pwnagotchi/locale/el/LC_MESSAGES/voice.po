@@ -20,8 +20,8 @@ msgstr ""
 msgid "ZzzzZZzzzzZzzz"
 msgstr ""
 
-msgid "Hi, I'm Pwnagotchi! Starting ..."
-msgstr "Γειά, είμαι το Pwnagotchi! Εκκινούμαι ..."
+msgid "Hi, I'm Pwnagotchi! Starting..."
+msgstr "Γειά, είμαι το Pwnagotchi! Εκκινούμαι..."
 
 msgid "New day, new hunt, new pwns!"
 msgstr "Νέα μέρα, νέο κυνήγι, νέα pwns!"
@@ -39,8 +39,8 @@ msgstr "Το νευρωνικό δίκτυο είναι έτοιμο."
 msgid "Hey, channel {channel} is free! Your AP will say thanks."
 msgstr "Ε, το κανάλι {channel} είναιελεύθερο! Το AP σου θα είναι ευγνώμων."
 
-msgid "I'm bored ..."
-msgstr "Βαριέμαι ..."
+msgid "I'm bored..."
+msgstr "Βαριέμαι..."
 
 msgid "Let's go for a walk!"
 msgstr "Ας πάμε μια βόλτα!"
@@ -51,11 +51,11 @@ msgstr "Είναι η καλύτερημέρα της ζωής μου!"
 msgid "Shitty day :/"
 msgstr "Σκατένια μέρα :/"
 
-msgid "I'm extremely bored ..."
-msgstr "Βαριέμαι πάρα πολύ ..."
+msgid "I'm extremely bored..."
+msgstr "Βαριέμαι πάρα πολύ..."
 
-msgid "I'm very sad ..."
-msgstr "Είμαι πολύ λυπημένο ..."
+msgid "I'm very sad..."
+msgstr "Είμαι πολύ λυπημένο..."
 
 msgid "I'm sad"
 msgstr "Είμαι λυπημένο"
@@ -72,8 +72,8 @@ msgstr "Τόσα πολλά δίκτυα!!!"
 msgid "I'm having so much fun!"
 msgstr "Περνάω τέλεια!"
 
-msgid "My crime is that of curiosity ..."
-msgstr "Η περιέργεια είναιτο μόνο έγκλημά μου ..."
+msgid "My crime is that of curiosity..."
+msgstr "Η περιέργεια είναιτο μόνο έγκλημά μου..."
 
 #, python-brace-format
 msgid "Hello {name}! Nice to meet you. {name}"
@@ -84,16 +84,16 @@ msgid "Unit {name} is nearby! {name}"
 msgstr "Η μονάδα {name} είναι κοντά! {name}"
 
 #, python-brace-format
-msgid "Uhm ... goodbye {name}"
-msgstr "Εμμ ...αντίο {name}"
+msgid "Uhm... goodbye {name}"
+msgstr "Εμμ...αντίο {name}"
 
 #, python-brace-format
-msgid "{name} is gone ..."
-msgstr "Το {name} έφυγε ..."
+msgid "{name} is gone..."
+msgstr "Το {name} έφυγε..."
 
 #, python-brace-format
-msgid "Whoops ... {name} is gone."
-msgstr "Ουπς ... Εξαφανίστηκε το {name}."
+msgid "Whoops... {name} is gone."
+msgstr "Ουπς... Εξαφανίστηκε το {name}."
 
 #, python-brace-format
 msgid "{name} missed!"
@@ -102,18 +102,18 @@ msgstr "Έχασα το {name}!"
 msgid "Missed!"
 msgstr "Το έχασα!"
 
-msgid "Nobody wants to play with me ..."
-msgstr "Κανείς δε θέλει ναπαίξει μαζί μου ..."
+msgid "Nobody wants to play with me..."
+msgstr "Κανείς δε θέλει ναπαίξει μαζί μου..."
 
-msgid "I feel so alone ..."
-msgstr "Νιώθω μοναχός μου ..."
+msgid "I feel so alone..."
+msgstr "Νιώθω μοναχός μου..."
 
 msgid "Where's everybody?!"
 msgstr "Μα, πού πήγαν όλοι;!"
 
 #, python-brace-format
-msgid "Napping for {secs}s ..."
-msgstr "Ξεκουράζομαι για {secs}s ..."
+msgid "Napping for {secs}s..."
+msgstr "Ξεκουράζομαι για {secs}s..."
 
 msgid "Zzzzz"
 msgstr ""
@@ -123,8 +123,8 @@ msgid "ZzzZzzz ({secs}s)"
 msgstr ""
 
 #, python-brace-format
-msgid "Waiting for {secs}s ..."
-msgstr "Περιμένω για {secs}s ..."
+msgid "Waiting for {secs}s..."
+msgstr "Περιμένω για {secs}s..."
 
 #, python-brace-format
 msgid "Looking around ({secs}s)"
@@ -158,8 +158,8 @@ msgstr "Μπανάρω την {mac}!"
 msgid "Cool, we got {num} new handshake{plural}!"
 msgstr "Τέλεια δικέ μου, πήραμε {num} νέες χειραψίες!"
 
-msgid "Oops, something went wrong ... Rebooting ..."
-msgstr "Ουπς, κάτιπήγε λάθος ... Επανεκκινούμαι ..."
+msgid "Oops, something went wrong... Rebooting..."
+msgstr "Ουπς, κάτιπήγε λάθος... Επανεκκινούμαι..."
 
 #, python-brace-format
 msgid "Kicked {num} stations\n"

@@ -87,7 +87,7 @@ class Environment(gym.Env):
         return params
 
     def _next_epoch(self):
-        logging.debug("[ai] waiting for epoch to finish ...")
+        logging.debug("[ai] waiting for epoch to finish...")
         return self._epoch.wait_for_epoch_data()
 
     def _apply_policy(self, policy):
@@ -114,7 +114,7 @@ class Environment(gym.Env):
         return self.last['state_v'], self.last['reward'], not self._agent.is_training(), {}
 
     def reset(self):
-        # logging.info("[ai] resetting environment ...")
+        # logging.info("[ai] resetting environment...")
         self._epoch_num = 0
         state = self._next_epoch()
         self.last['state'] = state
