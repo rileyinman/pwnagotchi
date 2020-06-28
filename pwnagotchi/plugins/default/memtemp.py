@@ -32,7 +32,7 @@ class MemTemp(plugins.Plugin):
     __description__ = 'A plugin that will display memory/cpu usage and temperature'
 
     def on_loaded(self):
-        logging.info("memtemp plugin loaded.")
+        logging.info("[memtemp] Plugin loaded.")
 
     def mem_usage(self):
         return int(pwnagotchi.mem_usage() * 100)
@@ -88,8 +88,8 @@ class MemTemp(plugins.Plugin):
 
         if self.options['orientation'] == "vertical":
             ui.set('memtemp',
-                   " mem:%s%%\n cpu:%s%%\ntemp:%s%s" % (self.mem_usage(), self.cpu_load(), temp, symbol))
+                   f" mem:{self.mem_usage()}%\n cpu:{self.cpu_load()}%\ntemp:{temp}{symbol}")
         else:
             # default to horizontal
             ui.set('memtemp',
-                   " mem cpu temp\n %s%% %s%%  %s%s" % (self.mem_usage(), self.cpu_load(), temp, symbol))
+                   f" mem cpu temp\n {self.mem_usage()}% {self.cpu_load()}%  {temp}{symbol}")
