@@ -27,13 +27,13 @@ class NetPos(plugins.Plugin):
 
     def on_loaded(self):
         if 'api_key' not in self.options or ('api_key' in self.options and not self.options['api_key']):
-            logging.error("NET-POS: api_key isn't set. Can't use mozilla's api.")
+            logging.error("[net-pos] api_key isn't set. Can't use mozilla's api.")
             return
         if 'api_url' in self.options:
             self.API_URL = self.options['api_url']
         self.ready = True
-        logging.info("net-pos plugin loaded.")
-        logging.debug(f"net-pos: use api_url: {self.API_URL}");
+        logging.info("[net-pos] Plugin loaded.")
+        logging.debug(f"[net-pos] Using api_url: {self.API_URL}.");
 
     def _append_saved(self, path):
         to_save = list()
@@ -42,7 +42,7 @@ class NetPos(plugins.Plugin):
         elif isinstance(path, list):
             to_save += path
         else:
-            raise TypeError("Expected list or str, got %s" % type(path))
+            raise TypeError(f"Expected list or str, got {type(path)}")
 
         with open('/root/.net_pos_saved', 'a') as saved_file:
             for x in to_save:
@@ -65,8 +65,8 @@ class NetPos(plugins.Plugin):
                 new_np_files = set(all_np_files) - set(reported) - set(self.skip)
 
                 if new_np_files:
-                    logging.debug("NET-POS: Found %d new net-pos files. Fetching positions ...", len(new_np_files))
-                    display.set('status', f"Found {len(new_np_files)} new net-pos files. Fetching positions ...")
+                    logging.debug(f"[net-pos] Found {len(new_np_files)} new net-pos files. Fetching positions...")
+                    display.set('status', f"Found {len(new_np_files)} new net-pos files. Fetching positions...")
                     display.update(force=True)
                     for idx, np_file in enumerate(new_np_files):
 
@@ -80,15 +80,15 @@ class NetPos(plugins.Plugin):
                         try:
                             geo_data = self._get_geo_data(np_file)  # returns json obj
                         except requests.exceptions.RequestException as req_e:
-                            logging.error("NET-POS: %s - RequestException: %s", np_file, req_e)
+                            logging.error(f"[net-pos] {np_file} - RequestException: {req_e}")
                             self.skip += np_file
                             continue
                         except json.JSONDecodeError as js_e:
-                            logging.error("NET-POS: %s - JSONDecodeError: %s, removing it...", np_file, js_e)
+                            logging.error(f"[net-pos] {np_file} - JSONDecodeError: {js_e}, removing it...")
                             os.remove(np_file)
                             continue
                         except OSError as os_e:
-                            logging.error("NET-POS: %s - OSError: %s", np_file, os_e)
+                            logging.error(f"[net-pos] {np_file} - OSError: {os_e}")
                             self.skip += np_file
                             continue
 
@@ -108,13 +108,13 @@ class NetPos(plugins.Plugin):
 
         netpos["ts"] = int("%.0f" % time.time())
         netpos_filename = filename.replace('.pcap', '.net-pos.json')
-        logging.debug("NET-POS: Saving net-location to %s", netpos_filename)
+        logging.debug(f"[net-pos] Saving net-location to {netpos_filename}")
 
         try:
             with open(netpos_filename, 'w+t') as net_pos_file:
                 json.dump(netpos, net_pos_file)
         except OSError as os_e:
-            logging.error("NET-POS: %s", os_e)
+            logging.error(f"[net-pos] {os_e}")
 
 
     def _get_netpos(self, agent):
@@ -139,9 +139,7 @@ class NetPos(plugins.Plugin):
             raise os_e
 
         try:
-            result = requests.post(geourl,
-                                   json=data,
-                                   timeout=timeout)
+            result = requests.post(geourl, json=data, timeout=timeout)
             return_geo = result.json()
             if data["ts"]:
                 return_geo["ts"] = data["ts"]

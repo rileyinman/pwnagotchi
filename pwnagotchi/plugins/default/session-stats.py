@@ -198,7 +198,7 @@ class SessionStats(plugins.Plugin):
         self.session = StatusFile(os.path.join(self.options['save_directory'],
                                                self.session_name),
                                   data_format='json')
-        logging.info("Session-stats plugin loaded.")
+        logging.info("[session-stats] Plugin loaded.")
 
     def on_epoch(self, agent, epoch, epoch_data):
         """

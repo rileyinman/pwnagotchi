@@ -8,9 +8,9 @@ from pwnagotchi import reboot
 
 def systemd_dropin(name, content):
     if not name.endswith('.service'):
-        name = '%s.service' % name
+        name = f'{name}.service'
 
-    dropin_dir = "/etc/systemd/system/%s.d/" % name
+    dropin_dir = f"/etc/systemd/system/{name}.d/"
     os.makedirs(dropin_dir, exist_ok=True)
 
     with open(os.path.join(dropin_dir, "switcher.conf"), "wt") as dropin:
@@ -20,27 +20,27 @@ def systemd_dropin(name, content):
 
 def systemctl(command, unit=None):
     if unit:
-        os.system("/bin/systemctl %s %s" % (command, unit))
+        os.system(f"/bin/systemctl {command} {unit}")
     else:
-        os.system("/bin/systemctl %s" % command)
+        os.system(f"/bin/systemctl {command}")
 
 def run_task(name, options):
-    task_service_name = "switcher-%s-task.service" % name
+    task_service_name = f"switcher-{name}-task.service"
     # save all the commands to a shell script
     script_dir = '/usr/local/bin/'
-    script_path = os.path.join(script_dir, 'switcher-%s.sh' % name)
+    script_path = os.path.join(script_dir, f'switcher-{name}.sh')
     os.makedirs(script_dir, exist_ok=True)
 
     with open(script_path, 'wt') as script_file:
         script_file.write('#!/bin/bash\n')
         for cmd in options['commands']:
-            script_file.write('%s\n' % cmd)
+            script_file.write('{cmd}\n')
 
-    os.system("chmod a+x %s" % script_path)
+    os.system(f"chmod a+x {script_path}")
 
     # here we create the service which runs the tasks
-    with open('/etc/systemd/system/%s' % task_service_name, 'wt') as task_service:
-        task_service.write("""
+    with open(f'/etc/systemd/system/{task_service_name}', 'wt') as task_service:
+        task_service.write(f"""
         [Unit]
         Description=Executes the tasks of the pwnagotchi switcher plugin
         After=pwnagotchi.service bettercap.service
@@ -48,13 +48,13 @@ def run_task(name, options):
         [Service]
         Type=oneshot
         RemainAfterExit=yes
-        ExecStart=-/usr/local/bin/switcher-%s.sh
-        ExecStart=-/bin/rm /etc/systemd/system/%s
-        ExecStart=-/bin/rm /usr/local/bin/switcher-%s.sh
+        ExecStart=-/usr/local/bin/switcher-{name}.sh
+        ExecStart=-/bin/rm /etc/systemd/system/{task_service_name}
+        ExecStart=-/bin/rm /usr/local/bin/switcher-{name}.sh
 
         [Install]
         WantedBy=multi-user.target
-        """ % (name, task_service_name, name))
+        """)
 
     if 'reboot' in options and options['reboot']:
         # create a indication file!
@@ -76,18 +76,18 @@ def run_task(name, options):
         ExecStart=-/bin/rm /etc/systemd/system/switcher-reboot.timer""")
 
         with open('/etc/systemd/system/switcher-reboot.timer', 'wt') as reboot_timer:
-            reboot_timer.write("""
+            reboot_timer.write(f"""
             [Unit]
             Description=Reboot when time is up
             ConditionPathExists=/root/.switcher
 
             [Timer]
-            OnBootSec=%sm
+            OnBootSec={options['stopwatch']}m
             Unit=reboot.target
 
             [Install]
             WantedBy=timers.target
-            """ % options['stopwatch'])
+            """)
 
         systemctl("daemon-reload")
         systemctl("enable", "switcher-reboot.timer")
@@ -125,13 +125,13 @@ class Switcher(plugins.Plugin):
         if 'tasks' in self.options and self.options['tasks']:
             self.tasks = self.options['tasks']
         else:
-            logging.debug('[switcher] No tasks found...')
+            logging.debug('[switcher] No tasks found.')
             return
 
-        logging.info("[switcher] is loaded.")
+        logging.info("[switcher] Plugin loaded.")
 
         # create hooks
-        logging.debug("[switcher] creating hooks...")
+        logging.debug("[switcher] Creating hooks...")
         methods = ['webhook', 'internet_available', 'ui_setup', 'ui_update',
                    'unload', 'display_setup', 'ready', 'ai_ready', 'ai_policy',
                    'ai_training_start', 'ai_training_step', 'ai_training_end',
@@ -142,6 +142,6 @@ class Switcher(plugins.Plugin):
                    'peer_detected', 'peer_lost', 'config_changed']
 
         for m in methods:
-            setattr(Switcher, 'on_%s' % m, partial(self.trigger, m))
+            setattr(Switcher, f'on_{m}', partial(self.trigger, m))
 
-        logging.debug("[switcher] triggers are ready to fire...")
+        logging.debug("[switcher] Triggers are ready to fire.")

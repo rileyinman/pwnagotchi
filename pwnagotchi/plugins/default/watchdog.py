@@ -20,7 +20,7 @@ class Watchdog(plugins.Plugin):
         """
         Gets called when the plugin gets loaded
         """
-        logging.info("Watchdog plugin loaded.")
+        logging.info("[watchdog] Plugin loaded.")
 
     def on_epoch(self, agent, epoch, epoch_data):
         # get last 10 lines
@@ -30,7 +30,7 @@ class Watchdog(plugins.Plugin):
             display = agent.view()
             display.set('status', 'Blind-Bug detected. Restarting.')
             display.update(force=True)
-            logging.info('[WATCHDOG] Blind-Bug detected. Restarting.')
+            logging.info('[watchdog] Blind-Bug detected. Restarting.')
             mode = 'MANU' if agent.mode == 'manual' else 'AUTO'
             import pwnagotchi
             pwnagotchi.restart(mode=mode)

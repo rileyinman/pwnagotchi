@@ -486,7 +486,7 @@ class WebConfig(plugins.Plugin):
         """
         Gets called when the plugin gets loaded
         """
-        logging.info("webcfg: Plugin loaded.")
+        logging.info("[webcfg] Plugin loaded.")
 
 
     def on_webhook(self, path, request):

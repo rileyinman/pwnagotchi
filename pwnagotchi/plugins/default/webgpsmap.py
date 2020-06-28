@@ -43,7 +43,7 @@ class Webgpsmap(plugins.Plugin):
         """
         Plugin got loaded
         """
-        logging.info("[webgpsmap]: plugin loaded")
+        logging.info("[webgpsmap] Plugin loaded.")
 
     def on_webhook(self, path, request):
         """
@@ -158,7 +158,7 @@ class Webgpsmap(plugins.Plugin):
         handshake_dir = gpsdir
         gps_data = dict()
 
-        logging.info(f"[webgpsmap] scanning {handshake_dir}")
+        logging.info(f"[webgpsmap] Scanning {handshake_dir}.")
 
 
         all_files = os.listdir(handshake_dir)
@@ -170,25 +170,25 @@ class Webgpsmap(plugins.Plugin):
         all_geo_or_gps_files = []
         for filename_pcap in all_pcap_files:
             filename_base = filename_pcap[:-5]  # remove ".pcap"
-            logging.debug(f"[webgpsmap] found: {filename_base}")
+            logging.debug(f"[webgpsmap] Found: {filename_base}.")
             filename_position = None
 
-            logging.debug("[webgpsmap] search for .gps.json")
+            logging.debug("[webgpsmap] Searching for .gps.json...")
             check_for = os.path.basename(filename_base) + ".gps.json"
             if check_for in all_files:
                 filename_position = str(os.path.join(handshake_dir, check_for))
 
-            logging.debug("[webgpsmap] search for .geo.json")
+            logging.debug("[webgpsmap] Searching for .geo.json...")
             check_for = os.path.basename(filename_base) + ".geo.json"
             if check_for in all_files:
                 filename_position = str(os.path.join(handshake_dir, check_for))
 
-            logging.debug("[webgpsmap] search for .paw-gps.json")
+            logging.debug("[webgpsmap] Searching for .paw-gps.json...")
             check_for = os.path.basename(filename_base) + ".paw-gps.json"
             if check_for in all_files:
                 filename_position = str(os.path.join(handshake_dir, check_for))
 
-            logging.debug(f"[webgpsmap] end search for position data files and use {filename_position}")
+            logging.debug(f"[webgpsmap] Ending search for position data files, using {filename_position}.")
 
             if filename_position is not None:
                 all_geo_or_gps_files.append(filename_position)
@@ -198,7 +198,7 @@ class Webgpsmap(plugins.Plugin):
         if newest_only:
             all_geo_or_gps_files = set(all_geo_or_gps_files) - set(self.ALREADY_SENT)
 
-        logging.info(f"[webgpsmap] Found {len(all_geo_or_gps_files)} position-data files from {len(all_pcap_files)} handshakes. Fetching positions ...")
+        logging.info(f"[webgpsmap] Found {len(all_geo_or_gps_files)} position-data files from {len(all_pcap_files)} handshakes. Fetching positions...")
 
         for pos_file in all_geo_or_gps_files:
             try:
@@ -247,7 +247,7 @@ class Webgpsmap(plugins.Plugin):
                 self.SKIP += pos_file
                 logging.error(f"[webgpsmap] OSError: {pos_file} - error: {error}")
                 continue
-        logging.info(f"[webgpsmap] loaded {len(gps_data)} positions")
+        logging.info(f"[webgpsmap] Loaded {len(gps_data)} positions.")
         return gps_data
 
     def get_html(self):
@@ -258,7 +258,7 @@ class Webgpsmap(plugins.Plugin):
             template_file = os.path.dirname(os.path.realpath(__file__)) + "/" + "webgpsmap.html"
             html_data = open(template_file, "r").read()
         except Exception as error:
-            logging.error(f"[webgpsmap] error loading template file {template_file} - error: {error}")
+            logging.error(f"[webgpsmap] Error loading template file {template_file} - error: {error}")
         return html_data
 
 
@@ -274,10 +274,10 @@ class PositionFile:
         self._file = path
         self._filename = os.path.basename(path)
         try:
-            logging.debug(f"[webgpsmap] loading {path}")
+            logging.debug(f"[webgpsmap] Loading {path}...")
             with open(path, 'r') as json_file:
                 self._json = json.load(json_file)
-            logging.debug(f"[webgpsmap] loaded {path}")
+            logging.debug(f"[webgpsmap] Loaded {path}.")
         except json.JSONDecodeError as js_e:
             raise js_e
 

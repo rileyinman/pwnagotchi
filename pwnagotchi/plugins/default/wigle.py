@@ -106,13 +106,14 @@ class Wigle(plugins.Plugin):
 
     def on_loaded(self):
         if 'api_key' not in self.options or ('api_key' in self.options and self.options['api_key'] is None):
-            logging.debug("WIGLE: api_key isn't set. Can't upload to wigle.net")
+            logging.debug("[wigle] api_key isn't set, can't upload to wigle.net.")
             return
 
         if not 'whitelist' in self.options:
             self.options['whitelist'] = list()
 
         self.ready = True
+        logging.info("[wigle] Plugin loaded.")
 
     def on_internet_available(self, agent):
         """
@@ -135,27 +136,27 @@ class Wigle(plugins.Plugin):
         all_gps_files = remove_whitelisted(all_gps_files, self.options['whitelist'])
         new_gps_files = set(all_gps_files) - set(reported) - set(self.skip)
         if new_gps_files:
-            logging.info("WIGLE: Internet connectivity detected. Uploading new handshakes to wigle.net")
+            logging.info("[wigle] Internet connectivity detected, Uploading new handshakes to wigle.net...")
             csv_entries = list()
             no_err_entries = list()
             for gps_file in new_gps_files:
                 pcap_filename = gps_file.replace('.gps.json', '.pcap')
                 if not os.path.exists(pcap_filename):
-                    logging.debug("WIGLE: Can't find pcap for %s", gps_file)
+                    logging.debug(f"[wigle] Can't find pcap for {gps_file}.")
                     self.skip.append(gps_file)
                     continue
                 try:
                     gps_data = _extract_gps_data(gps_file)
                 except OSError as os_err:
-                    logging.debug("WIGLE: %s", os_err)
+                    logging.debug(f"[wigle] {os_err}")
                     self.skip.append(gps_file)
                     continue
                 except json.JSONDecodeError as json_err:
-                    logging.debug("WIGLE: %s", json_err)
+                    logging.debug(f"[wigle]: {json_err}")
                     self.skip.append(gps_file)
                     continue
                 if gps_data['Latitude'] == 0 and gps_data['Longitude'] == 0:
-                    logging.debug("WIGLE: Not enough gps-information for %s. Trying again next time.", gps_file)
+                    logging.debug(f"[wigle] Not enough gps-information for {gps_file}. Trying again next time.")
                     self.skip.append(gps_file)
                     continue
                 try:
@@ -165,11 +166,11 @@ class Wigle(plugins.Plugin):
                                                                   WifiInfo.CHANNEL,
                                                                   WifiInfo.RSSI])
                 except FieldNotFoundError:
-                    logging.debug("WIGLE: Could not extract all information. Skip %s", gps_file)
+                    logging.debug(f"[wigle] Could not extract all information. Skip {gps_file}.")
                     self.skip.append(gps_file)
                     continue
                 except Scapy_Exception as sc_e:
-                    logging.debug("WIGLE: %s", sc_e)
+                    logging.debug(f"[wigle]: {sc_e}")
                     self.skip.append(gps_file)
                     continue
                 new_entry = _transform_wigle_entry(gps_data, pcap_data)
@@ -182,10 +183,10 @@ class Wigle(plugins.Plugin):
                     _send_to_wigle(csv_entries, self.options['api_key'])
                     reported += no_err_entries
                     self.report.update(data={'reported': reported})
-                    logging.info("WIGLE: Successfully uploaded %d files", len(no_err_entries))
+                    logging.info(f"[wigle] Successfully uploaded {len(no_err_entries)} files.")
                 except requests.exceptions.RequestException as re_e:
                     self.skip += no_err_entries
-                    logging.debug("WIGLE: Got an exception while uploading %s", re_e)
+                    logging.debug(f"[wigle] Got an exception while uploading {re_e}")
                 except OSError as os_e:
                     self.skip += no_err_entries
-                    logging.debug("WIGLE: Got the following error: %s", os_e)
+                    logging.debug(f"[wigle] Got the following error: {os_e}")

@@ -21,10 +21,10 @@ class Led(plugins.Plugin):
 
     # called when the plugin is loaded
     def on_loaded(self):
-        self._led_file = "/sys/class/leds/led%d/brightness" % self.options['led']
+        self._led_file = "/sys/class/leds/led{self.options['led']}/brightness"
         self._delay = int(self.options['delay'])
 
-        logging.info("[led] plugin loaded for %s" % self._led_file)
+        logging.info(f"[led] Plugin loaded for {self._led_file}.")
         self._on_event('loaded')
         _thread.start_new_thread(self._worker, ())
 
@@ -32,16 +32,16 @@ class Led(plugins.Plugin):
         if not self._is_busy:
             self._event_name = event
             self._event.set()
-            logging.debug("[led] event '%s' set", event)
+            logging.debug(f"[led] Event '{event}' set.")
         else:
-            logging.debug("[led] skipping event '%s' because the worker is busy", event)
+            logging.debug(f"[led] Skipping event '{event}' because the worker is busy.")
 
     def _led(self, on):
         with open(self._led_file, 'wt') as fp:
             fp.write(str(on))
 
     def _blink(self, pattern):
-        logging.debug("[led] using pattern '%s' ..." % pattern)
+        logging.debug(f"[led] Using pattern '{pattern}'...")
         for c in pattern:
             if c == ' ':
                 self._led(1)
@@ -62,9 +62,9 @@ class Led(plugins.Plugin):
                     pattern = self.options['patterns'][self._event_name]
                     self._blink(pattern)
                 else:
-                    logging.debug("[led] no pattern defined for %s" % self._event_name)
+                    logging.debug(f"[led] No pattern defined for {self._event_name}.")
             except Exception as e:
-                logging.exception("[led] error while blinking")
+                logging.exception(f"[led] Error while blinking.")
 
             finally:
                 self._is_busy = False

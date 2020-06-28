@@ -19,13 +19,11 @@ class GPS(plugins.Plugin):
         self.coordinates = None
 
     def on_loaded(self):
-        logging.info(f"gps plugin loaded for {self.options['device']}")
+        logging.info(f"[gps] Plugin loaded for {self.options['device']}.")
 
     def on_ready(self, agent):
         if os.path.exists(self.options["device"]):
-            logging.info(
-                f"enabling bettercap's gps module for {self.options['device']}"
-            )
+            logging.info(f"[gps] Enabling bettercap module for {self.options['device']}.")
             try:
                 agent.run("gps off")
             except Exception:
@@ -36,7 +34,7 @@ class GPS(plugins.Plugin):
             agent.run("gps on")
             self.running = True
         else:
-            logging.warning("no GPS detected")
+            logging.warning("[gps] No GPS detected.")
 
     def on_handshake(self, agent, filename, access_point, client_station):
         if self.running:
@@ -48,11 +46,11 @@ class GPS(plugins.Plugin):
                 # avoid 0.000... measurements
                 self.coordinates["Latitude"], self.coordinates["Longitude"]
             ]):
-                logging.info(f"saving GPS to {gps_filename} ({self.coordinates})")
+                logging.info(f"[gps] Saving GPS to {gps_filename} ({self.coordinates}).")
                 with open(gps_filename, "w+t") as fp:
                     json.dump(self.coordinates, fp)
             else:
-                logging.info("not saving GPS. Couldn't find location.")
+                logging.info("[gps] Couldn't find location, not saving GPS.")
 
     def on_ui_setup(self, ui):
         # add coordinates for other displays
@@ -73,7 +71,7 @@ class GPS(plugins.Plugin):
             lat_pos = (67, 73)
             lon_pos = (62, 83)
             alt_pos = (67, 93)
-        elif ui.is_dfrobot_v2: 
+        elif ui.is_dfrobot_v2:
             lat_pos = (127, 75)
             lon_pos = (122, 84)
             alt_pos = (127, 94)
