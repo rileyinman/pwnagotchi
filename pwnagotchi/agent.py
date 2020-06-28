@@ -52,7 +52,7 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
 
         logging.info(f"{pwnagotchi.name()}@{self.fingerprint()} (v{pwnagotchi.__version__})")
         for _, plugin in plugins.loaded.items():
-            logging.debug(f"Plugin '{plugin.__class__.__name__}' v{plugin.__version}")
+            logging.debug(f"Plugin '{plugin.__class__.__name__}' v{plugin.__version__}")
 
     def config(self):
         return self._config
