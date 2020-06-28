@@ -42,7 +42,7 @@ class MemTemp(plugins.Plugin):
 
     def on_ui_setup(self, ui):
         if ui.is_waveshare_v2():
-            h_pos = (180, 80)
+            h_pos = (170, 80)
             v_pos = (180, 61)
         elif ui.is_waveshare_v1():
             h_pos = (170, 80)
@@ -51,13 +51,13 @@ class MemTemp(plugins.Plugin):
             h_pos = (53, 77)
             v_pos = (78, 67)
         elif ui.is_inky():
-            h_pos = (140, 68)
+            h_pos = (130, 68)
             v_pos = (165, 54)
         elif ui.is_waveshare27inch():
             h_pos = (192, 138)
             v_pos = (216, 122)
         else:
-            h_pos = (155, 76)
+            h_pos = (145, 76)
             v_pos = (180, 61)
 
         if self.options['orientation'] == "vertical":
