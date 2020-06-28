@@ -184,7 +184,7 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
             for ap in s['wifi']['aps']:
                 if ap['encryption'] == '' or ap['encryption'] == 'OPEN':
                     continue
-                elif ap['hostname'] not in whitelist \
+                if ap['hostname'] not in whitelist \
                         and ap['mac'].lower() not in whitelist \
                         and ap['mac'][:8].lower() not in whitelist:
                     if self._filter_included(ap):
@@ -234,7 +234,7 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
                 return (ap, {'mac': station_mac, 'vendor': ''})
         return None
 
-    def _update_uptime(self, s):
+    def _update_uptime(self):
         secs = pwnagotchi.uptime()
         self._view.set('uptime', utils.secs_to_hhmmss(secs))
         # self._view.set('epoch', '%04d' % self._epoch.epoch)
@@ -386,13 +386,11 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
         if self._has_handshake(who):
             return False
 
-        elif who not in self._history:
+        if who not in self._history:
             self._history[who] = 1
             return True
 
-        else:
-            self._history[who] += 1
-
+        self._history[who] += 1
         return self._history[who] < self._config['personality']['max_interactions']
 
     def associate(self, ap, throttle=0):

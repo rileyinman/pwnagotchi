@@ -149,7 +149,7 @@ class LastSession(object):
                         else:
                             cache[pubkey].adv['pwnd_tot'] = pwnd_tot
             except Exception as e:
-                logging.error("Error parsing line '{line}': {e}")
+                logging.error(f"Error parsing line '{line}': {e}")
 
         if started_at is not None:
             self.duration = stopped_at - started_at
@@ -197,7 +197,7 @@ class LastSession(object):
                 lines.reverse()
 
             if len(lines) == 0:
-                lines.append("Initial Session");
+                lines.append("Initial Session")
 
             ui.on_reading_logs()
 
@@ -254,7 +254,7 @@ def log_rotation(filename, cfg):
     rotation = cfg['rotation']
     if not rotation['enabled']:
         return
-    elif not os.path.isfile(filename):
+    if not os.path.isfile(filename):
         return
 
     stats = os.stat(filename)
@@ -262,7 +262,7 @@ def log_rotation(filename, cfg):
     if rotation['size']:
         max_size = parse_max_size(rotation['size'])
         if stats.st_size >= max_size:
-            do_rotate(filename, stats, cfg)
+            do_rotate(filename, stats)
     else:
         raise Exception("log rotation is enabled but log.rotation.size was not specified")
 
@@ -278,15 +278,15 @@ def parse_max_size(s):
 
     if unit == 'k':
         return num * 1024
-    elif unit == 'm':
+    if unit == 'm':
         return num * 1024 * 1024
-    elif unit == 'g':
+    if unit == 'g':
         return num * 1024 * 1024 * 1024
-    else:
-        return num
+
+    return num
 
 
-def do_rotate(filename, stats, cfg):
+def do_rotate(filename, stats):
     base_path = os.path.dirname(filename)
     name = os.path.splitext(os.path.basename(filename))[0]
     archive_filename = os.path.join(base_path, f"{name}.gz")

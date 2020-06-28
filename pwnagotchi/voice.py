@@ -46,8 +46,7 @@ class Voice:
     def on_reading_logs(self, lines_so_far=0):
         if lines_so_far == 0:
             return self._('Reading last session logs ...')
-        else:
-            return self._(f'Read {lines_so_far} log lines so far ...')
+        return self._(f'Read {lines_so_far} log lines so far ...')
 
     def on_bored(self):
         return random.choice([
@@ -136,7 +135,7 @@ class Voice:
 
     def on_assoc(self, ap):
         ssid, bssid = ap['hostname'], ap['mac']
-        what = ssid if ssid != '' and ssid != '<hidden>' else bssid
+        what = ssid if ssid not in ('', '<hidden>') else bssid
         return random.choice([
             self._(f'Hey {what} let\'s be friends!'),
             self._(f'Associating to {what}'),
@@ -152,7 +151,7 @@ class Voice:
         s = 's' if new_shakes > 1 else ''
         return self._(f'Cool, we got {new_shakes} new handshake{s}!')
 
-    def on_unread_messages(self, count, total):
+    def on_unread_messages(self, count):
         s = 's' if count > 1 else ''
         return self._(f'You have {count} new message{s}!')
 
@@ -175,10 +174,10 @@ class Voice:
     def on_last_session_tweet(self, last_session):
         return self._(
             'I\'ve been pwning for {duration} and kicked {deauthed} clients! I\'ve also met {associated} new friends and ate {handshakes} handshakes! #pwnagotchi #pwnlog #pwnlife #hacktheplanet #skynet').format(
-            duration=last_session.duration_human,
-            deauthed=last_session.deauthed,
-            associated=last_session.associated,
-            handshakes=last_session.handshakes)
+                duration=last_session.duration_human,
+                deauthed=last_session.deauthed,
+                associated=last_session.associated,
+                handshakes=last_session.handshakes)
 
     def hhmmss(self, count, fmt):
         if count > 1:

@@ -1,20 +1,18 @@
-
-import logging
-import glob
-import os
-import time
-import subprocess
-
-import json
-import shutil
-import toml
-import sys
-import re
-
-from toml.encoder import TomlEncoder, _dump_str
-from zipfile import ZipFile
 from datetime import datetime
 from enum import Enum
+import glob
+import json
+import logging
+import os
+import re
+import shutil
+import subprocess
+import sys
+import time
+from zipfile import ZipFile
+
+import toml
+from toml.encoder import TomlEncoder, _dump_str
 
 
 class DottedTomlEncoder(TomlEncoder):
@@ -59,7 +57,7 @@ class DottedTomlEncoder(TomlEncoder):
                         retstr += '\n'
                 else:
                     retstr += (pre + qsection + " = " +
-                                str(self.dump_value(value)) + '\n')
+                               str(self.dump_value(value)) + '\n')
         return (retstr, self._dict())
 
 
@@ -130,10 +128,10 @@ def merge_config(user, default):
     return user
 
 def keys_to_str(data):
-    if isinstance(data,list):
+    if isinstance(data, list):
         converted_list = list()
         for item in data:
-            if isinstance(item,list) or isinstance(item,dict):
+            if isinstance(item, (dict, list)):
                 converted_list.append(keys_to_str(item))
             else:
                 converted_list.append(item)
@@ -141,7 +139,7 @@ def keys_to_str(data):
 
     converted_dict = dict()
     for key, value in data.items():
-        if isinstance(value, list) or isinstance(value, dict):
+        if isinstance(value, (dict, list)):
             converted_dict[str(key)] = keys_to_str(value)
         else:
             converted_dict[str(key)] = value
@@ -364,7 +362,7 @@ def extract_from_pcap(path, fields):
         subtypes = set()
 
         if field == WifiInfo.BSSID:
-            from scapy.all import Dot11Beacon, Dot11ProbeResp, Dot11AssoReq, Dot11ReassoReq, Dot11, sniff
+            from scapy.all import Dot11Beacon, Dot11, sniff
             subtypes.add('beacon')
             bpf_filter = " or ".join([f"wlan type mgt subtype {subtype}" for subtype in subtypes])
             packets = sniff(offline=path, filter=bpf_filter)
@@ -429,7 +427,7 @@ def extract_from_pcap(path, fields):
 
     return results
 
-class StatusFile(object):
+class StatusFile():
     def __init__(self, path, data_format='raw'):
         self._path = path
         self._updated = None

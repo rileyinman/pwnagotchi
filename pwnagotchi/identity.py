@@ -1,10 +1,11 @@
-from Crypto.Signature import PKCS1_PSS
-from Crypto.PublicKey import RSA
-import Crypto.Hash.SHA256 as SHA256
 import base64
 import hashlib
 import os
 import logging
+
+from Crypto.Signature import PKCS1_PSS
+from Crypto.PublicKey import RSA
+import Crypto.Hash.SHA256 as SHA256
 
 DefaultPath = "/etc/pwnagotchi/"
 

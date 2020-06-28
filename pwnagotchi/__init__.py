@@ -3,8 +3,6 @@ import logging
 import time
 import re
 
-
-
 from pwnagotchi._version import __version__
 
 _name = None
@@ -80,7 +78,7 @@ def _cpu_stat():
     Returns the splitted first line of the /proc/stat file
     """
     with open('/proc/stat', 'rt') as fp:
-        return list(map(int,fp.readline().split()[1:]))
+        return list(map(int, fp.readline().split()[1:]))
 
 
 def cpu_load():
