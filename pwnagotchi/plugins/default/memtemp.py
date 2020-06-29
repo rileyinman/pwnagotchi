@@ -93,4 +93,4 @@ class MemTemp(plugins.Plugin):
         else:
             # default to horizontal
             ui.set('memtemp',
-                   f" mem cpu temp\n {self.mem_usage()}% {self.cpu_load()}%  {temp}{symbol}")
+                   f" mem cpu  temp\n {self.mem_usage()}% {self.cpu_load()}%  {temp}{symbol}")
