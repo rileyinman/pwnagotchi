@@ -115,6 +115,8 @@ is_crypted_mode() {
 
 # decryption loop
 is_decrypted() {
+  declare -a pids_to_kill
+
   while read -r mapping container mount; do
     # mapping   = name the device or file will be mapped to
     # container = the luks encrypted device or file
@@ -140,11 +142,12 @@ is_decrypted() {
         >/dev/null 2>&1 ip addr add 192.168.0.10/24 dev wlan0
       fi
 
-      if ! pgrep -f decryption-webserver >/dev/null 2>&1; then
+      if ! pgrep --parent "$$" -af decryption-webserver >/dev/null 2>&1; then
         >/dev/null 2>&1 decryption-webserver &
+        pids_to_kill+=("$!")
       fi
 
-      if ! pgrep wpa_supplicant >/dev/null 2>&1; then
+      if ! pgrep --parent "$$" -af wpa_supplicant >/dev/null 2>&1; then
         >/tmp/wpa_supplicant.conf cat <<EOF
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
@@ -159,10 +162,12 @@ network={
 }
 EOF
         >/dev/null 2>&1 wpa_supplicant -D nl80211 -i wlan0 -c /tmp/wpa_supplicant.conf &
+        pids_to_kill+=("$!")
       fi
 
-      if ! pgrep dnsmasq >/dev/null 2>&1; then
+      if ! pgrep --parent "$$" -af dnsmasq >/dev/null 2>&1; then
         >/dev/null 2>&1 dnsmasq -k -p 53 -h -O "6,192.168.0.10" -A "/#/192.168.0.10" -i wlan0 -K -F 192.168.0.50,192.168.0.60,255.255.255.0,24h &
+        pids_to_kill+=("$!")
       fi
 
       return 1
@@ -175,10 +180,7 @@ EOF
   rm /tmp/.pwnagotchi-secret-*
   sync # flush
 
-  pkill wpa_supplicant
-  pkill dnsmasq
-  pid="$(pgrep -f "decryption-webserver")"
-  [[ -n "$pid" ]] && kill "$pid"
+  kill "${pids_to_kill[@]}"
 
   return 0
 }
