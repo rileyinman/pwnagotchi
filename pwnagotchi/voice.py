@@ -173,27 +173,20 @@ class Voice:
 
     def on_last_session_tweet(self, last_session):
         return self._(
-            'I\'ve been pwning for {duration} and kicked {deauthed} clients! I\'ve also met {associated} new friends and ate {handshakes} handshakes! #pwnagotchi #pwnlog #pwnlife #hacktheplanet #skynet').format(
+            'I\'ve been pwning for {duration} ({epochs} epochs) and kicked {deauthed} clients! I\'ve also met {associated} new friends and ate {handshakes} handshakes, with an average reward of {reward}!').format(
                 duration=last_session.duration_human,
+                epochs=last_session.epochs,
                 deauthed=last_session.deauthed,
                 associated=last_session.associated,
-                handshakes=last_session.handshakes)
+                handshakes=last_session.handshakes,
+                reward=last_session.avg_reward)
 
     def hhmmss(self, count, fmt):
-        if count > 1:
-            # plural
-            if fmt == "h":
-                return self._("hours")
-            if fmt == "m":
-                return self._("minutes")
-            if fmt == "s":
-                return self._("seconds")
-        else:
-            # sing
-            if fmt == "h":
-                return self._("hour")
-            if fmt == "m":
-                return self._("minute")
-            if fmt == "s":
-                return self._("second")
+        s = 's' if count > 1 else ''
+        if fmt == "h":
+            return self._(f"hour{s}")
+        if fmt == "m":
+            return self._(f"minute{s}")
+        if fmt == "s":
+            return self._(f"second{s}")
         return fmt
