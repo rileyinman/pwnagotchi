@@ -13,7 +13,7 @@ class PawGPS(plugins.Plugin):
     __version__ = '1.0.0'
     __name__ = 'pawgps'
     __license__ = 'GPL3'
-    __description__ = 'Saves GPS coordinates whenever an handshake is captured. The GPS data is get from PAW on android '
+    __description__ = 'Saves GPS coordinates whenever an handshake is captured. The GPS data is fetched from PAW on Android.'
 
     def __init__(self):
         if 'ip' not in self.options or ('ip' in self.options and self.options['ip'] is None):
@@ -26,7 +26,7 @@ class PawGPS(plugins.Plugin):
         logging.info(f"[paw-gps] Using IP address {self.ip}.")
 
     def on_handshake(self, agent, filename, access_point, client_station):
-        gps = requests.get('http://' + self.ip + '/gps.xhtml')
+        gps = requests.get(f'http://{self.ip}/gps.xhtml')
         gps_filename = filename.replace('.pcap', '.paw-gps.json')
 
         logging.info(f"[paw-gps] Saving GPS to {gps_filename} ({gps}).")
