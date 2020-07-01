@@ -103,7 +103,7 @@ class NetPos(plugins.Plugin):
                         display.set('status', f"Fetching positions ({idx + 1}/{len(new_np_files)})")
                         display.update(force=True)
 
-    def on_handshake(self, agent, filename):
+    def on_handshake(self, agent, filename, access_point, client_station):
         netpos = self._get_netpos(agent)
         if not netpos['wifiAccessPoints']:
             return

@@ -36,7 +36,7 @@ class GPS(plugins.Plugin):
         else:
             logging.warning("[gps] No GPS detected.")
 
-    def on_handshake(self, agent, filename):
+    def on_handshake(self, agent, filename, access_point, client_station):
         if self.running:
             info = agent.session()
             self.coordinates = info["gps"]

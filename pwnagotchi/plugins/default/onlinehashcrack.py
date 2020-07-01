@@ -81,7 +81,7 @@ class OnlineHashCrack(plugins.Plugin):
             raise os_e
 
 
-    def on_webhook(self):
+    def on_webhook(self, path, request):
         import requests
         from flask import redirect
         s = requests.Session()

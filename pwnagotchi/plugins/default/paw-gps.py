@@ -25,7 +25,7 @@ class PawGPS(plugins.Plugin):
         logging.info("[paw-gps] Plugin loaded.")
         logging.info(f"[paw-gps] Using IP address {self.ip}.")
 
-    def on_handshake(self, filename):
+    def on_handshake(self, agent, filename, access_point, client_station):
         gps = requests.get('http://' + self.ip + '/gps.xhtml')
         gps_filename = filename.replace('.pcap', '.paw-gps.json')
 

@@ -250,7 +250,7 @@ class Logtail(plugins.Plugin):
         logging.info("[logtail] Plugin loaded.")
 
 
-    def on_webhook(self, path):
+    def on_webhook(self, path, request):
         if not self.ready:
             return "Plugin not ready"
 
