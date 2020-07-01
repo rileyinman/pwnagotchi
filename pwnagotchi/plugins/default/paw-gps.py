@@ -16,12 +16,12 @@ class PawGPS(plugins.Plugin):
     __description__ = 'Saves GPS coordinates whenever an handshake is captured. The GPS data is fetched from PAW on Android.'
 
     def __init__(self):
-        if 'ip' not in self.options or ('ip' in self.options and self.options['ip'] is None):
-            self.ip = "192.168.44.1:8080"
-        else:
-            self.ip = self.options['ip']
+        self.ip = "192.168.44.1:8080"
 
     def on_loaded(self):
+        if 'ip' in self.options:
+            self.ip = self.options['ip']
+
         logging.info("[paw-gps] Plugin loaded.")
         logging.info(f"[paw-gps] Using IP address {self.ip}.")
 
