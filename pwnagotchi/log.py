@@ -302,7 +302,7 @@ def do_rotate(filename, stats):
 
     shutil.move(filename, log_filename)
 
-    print("Compressing to {archive_filename}...")
+    print(f"Compressing to {archive_filename}...")
 
     with open(log_filename, 'rb') as src:
         with gzip.open(archive_filename, 'wb') as dst:
