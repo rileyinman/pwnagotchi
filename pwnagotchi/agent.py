@@ -313,8 +313,8 @@ class Agent(Client, Automata, AsyncAdvertiser, AsyncTrainer):
     def _fetch_stats(self):
         while True:
             s = self.session()
-            self._update_uptime(s)
-            self._update_advertisement(s)
+            self._update_uptime()
+            self._update_advertisement()
             self._update_peers()
             self._update_counters()
             self._update_handshakes(0)
